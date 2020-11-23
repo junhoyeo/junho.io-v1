@@ -5,12 +5,16 @@ export default createGlobalStyle`
   ${normalize}
 
   @import url('https//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css');
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap');
 
   * {
     box-sizing: border-box;
-    user-select: none;
     -webkit-user-drag: none;
-    -webkit-tap-highlight-color: transparent;
+
+    &::selection {
+      background-color: rgba(29, 144, 255, 0.25);
+      color: rgba(255, 255, 255, 0.75);
+    }
   }
 
   a {
@@ -23,7 +27,7 @@ export default createGlobalStyle`
   body {
     margin: 0;
     word-break: keep-all;
-    background-color: #F7F8FA;
+    background-color: #19181D;
   }
 
   body,
