@@ -1,11 +1,17 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql, Link } from 'gatsby';
 import styled from 'styled-components';
 
 import GlobalStyle from './GlobalStyle';
 import { rhythm } from '../utils/typography';
 
-const Layout: React.FC = ({ children }) => {
+interface ILayout {
+  title?: React.ReactNode;
+  description?: React.ReactNode;
+  children?: React.ReactNode;
+}
+
+const Layout: React.FC<ILayout> = ({ title, description, children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -20,18 +26,13 @@ const Layout: React.FC = ({ children }) => {
     <>
       <GlobalStyle />
       <Container>
-        <Brand>{data.site.siteMetadata.title}</Brand>
-        <Title>
-          안녕하세요.
-          <br />
-          가치를 담아 서비스를 만드는
-          <br />
-          여준호입니다.
-        </Title>
-        <Description>
-          꿈꾸는 프론트엔드 개발자, 프로덕트를 사랑하는 기획자.
-          <br />제 블로그에 오신 걸 환영해요.
-        </Description>
+        <BrandWrapper>
+          <Link to="/">
+            <Brand>{data.site.siteMetadata.title}</Brand>
+          </Link>
+        </BrandWrapper>
+        {title && <Title>{title}</Title>}
+        {description && <Description>{description}</Description>}
         <main>{children}</main>
       </Container>
     </>
@@ -56,6 +57,11 @@ const Container = styled.div`
   }
 `;
 
+const BrandWrapper = styled.div`
+  margin-top: ${rhythm(1.8)};
+  margin-bottom: ${rhythm(1)};
+`;
+
 const Brand = styled.span`
   font-weight: 900;
   font-family: 'Montserrat', sans-serif;
@@ -63,8 +69,7 @@ const Brand = styled.span`
   color: #707176;
   cursor: pointer;
   width: fit-content;
-  padding-top: ${rhythm(1.8)};
-  padding-bottom: ${rhythm(1)};
+  user-select: none;
 `;
 
 const Title = styled.h1`
