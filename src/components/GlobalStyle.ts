@@ -4,9 +4,6 @@ import { normalize } from 'styled-normalize';
 export default createGlobalStyle`
   ${normalize}
 
-  @import url('https//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css');
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap');
-
   * {
     box-sizing: border-box;
     -webkit-user-drag: none;

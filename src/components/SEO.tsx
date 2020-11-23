@@ -73,7 +73,9 @@ const SEO: React.FC<ISEO> = ({
           content: metaDescription,
         },
       ].concat(meta as any[])}
-    />
+    >
+      <link rel="stylesheet" type="text/css" href="/fonts.css" />
+    </Helmet>
   );
 };
 
