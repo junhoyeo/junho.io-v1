@@ -75,6 +75,10 @@ const Brand = styled.span`
 const Title = styled.h1`
   font-size: 2.5rem;
   line-height: 1.25;
+
+  @media screen and (max-width: 330px) {
+    font-size: 2rem;
+  }
 `;
 
 const Description = styled.p`
