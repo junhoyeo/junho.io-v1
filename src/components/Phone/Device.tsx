@@ -1,10 +1,13 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
+// @ts-ignore FIXME
+import background from '../../assets/phone/background.png';
+
 const Device = () => {
   return (
     <Bezel>
-      <Screen>
+      <Screen style={{ backgroundImage: `url(${background})` }}>
         <NotchWrapper>
           <Notch />
         </NotchWrapper>
@@ -36,10 +39,12 @@ const Bezel = styled.div`
 const Screen = styled.div`
   width: 375px;
   height: 812px;
-  background-color: white;
+  background-color: #01141f;
   border-radius: 36px;
   display: flex;
   position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
 `;
 
 const NotchWrapper = styled.div`
