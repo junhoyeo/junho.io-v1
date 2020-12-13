@@ -1,6 +1,8 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
+import Symbols from './Symbols';
+
 // @ts-ignore FIXME
 import background from '../../assets/phone/background.png';
 
@@ -8,9 +10,11 @@ const Device = () => {
   return (
     <Bezel>
       <Screen style={{ backgroundImage: `url(${background})` }}>
-        <NotchWrapper>
+        <TopContainer>
+          <Clock>12:22</Clock>
           <Notch />
-        </NotchWrapper>
+          <Symbols />
+        </TopContainer>
       </Screen>
       <LeftButtons>
         <SilentSwitch />
@@ -47,7 +51,7 @@ const Screen = styled.div`
   background-repeat: no-repeat;
 `;
 
-const NotchWrapper = styled.div`
+const TopContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
@@ -55,6 +59,15 @@ const NotchWrapper = styled.div`
   top: -2px;
   left: 0;
   right: 0;
+`;
+
+const Clock = styled.span`
+  font-size: 17px;
+  font-weight: bold;
+  height: fit-content;
+  position: absolute;
+  top: 19px;
+  left: 26px;
 `;
 
 const Notch = styled.div`
