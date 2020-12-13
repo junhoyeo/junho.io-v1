@@ -49,9 +49,10 @@ const Bezel = styled.div`
   border: 1px solid #3d3d3d;
   display: flex;
   width: fit-content;
+  height: fit-content;
   padding: 18px;
   transform-origin: top;
-  height: fit-content;
+  transition: 0.5s all ease-out;
 `;
 
 const Screen = styled.div`

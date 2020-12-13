@@ -17,6 +17,7 @@ const Phone: React.FC<IPhone> = () => {
 
   useEffect(() => {
     if (screenWidth > 500) {
+      setTransformScale(1);
       return;
     }
     const containerWidth = screenWidth * 0.9;
