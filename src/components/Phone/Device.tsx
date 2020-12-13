@@ -6,7 +6,11 @@ import Symbols from './Symbols';
 // @ts-ignore FIXME
 import background from '../../assets/phone/background.png';
 
-const Device = () => {
+interface IDevice {
+  style?: React.CSSProperties;
+}
+
+const Device: React.FC<IDevice> = ({ style }) => {
   const currentTime = useMemo(() => {
     const date = new Date();
     return `${date.getHours() || 12}:${date
@@ -16,7 +20,7 @@ const Device = () => {
   }, []);
 
   return (
-    <Bezel>
+    <Bezel style={style}>
       <Screen style={{ backgroundImage: `url(${background})` }}>
         <TopContainer>
           <Clock>{currentTime}</Clock>
@@ -46,6 +50,8 @@ const Bezel = styled.div`
   display: flex;
   width: fit-content;
   padding: 18px;
+  transform-origin: top;
+  height: fit-content;
 `;
 
 const Screen = styled.div`
