@@ -9,7 +9,7 @@ import background from '../../assets/phone/background.png';
 const Device = () => {
   const currentTime = useMemo(() => {
     const date = new Date();
-    return `${date.getHours()}:${date
+    return `${date.getHours() || 12}:${date
       .getMinutes()
       .toString()
       .padStart(2, '0')}`;
