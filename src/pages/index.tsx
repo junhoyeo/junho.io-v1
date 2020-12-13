@@ -2,6 +2,7 @@ import React from 'react';
 
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
+import Phone from '../components/Phone';
 
 const IndexPage = () => (
   <Layout
@@ -22,6 +23,7 @@ const IndexPage = () => (
     }
   >
     <SEO title="Home" />
+    <Phone />
   </Layout>
 );
 
