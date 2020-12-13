@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import styled, { css } from 'styled-components';
 
 import Symbols from './Symbols';
@@ -7,11 +7,19 @@ import Symbols from './Symbols';
 import background from '../../assets/phone/background.png';
 
 const Device = () => {
+  const currentTime = useMemo(() => {
+    const date = new Date();
+    return `${date.getHours()}:${date
+      .getMinutes()
+      .toString()
+      .padStart(2, '0')}`;
+  }, []);
+
   return (
     <Bezel>
       <Screen style={{ backgroundImage: `url(${background})` }}>
         <TopContainer>
-          <Clock>12:22</Clock>
+          <Clock>{currentTime}</Clock>
           <Notch />
           <Symbols />
         </TopContainer>
