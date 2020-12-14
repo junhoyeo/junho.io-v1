@@ -2,15 +2,16 @@ import React, { useMemo } from 'react';
 import styled, { css } from 'styled-components';
 
 import Symbols from './Symbols';
-
-// @ts-ignore FIXME
-import background from '../../assets/phone/background.png';
+import Pagination from './Pagination';
 
 import Phone from './icons/Phone';
 import Mail from './icons/Mail';
 import Safari from './icons/Safari';
 import Music from './icons/Music';
 import { DEVICE_WIDTH } from './constants';
+
+// @ts-ignore FIXME
+import background from '../../assets/phone/background.png';
 
 interface IDevice {
   deviceSize: {
@@ -37,12 +38,15 @@ const Device: React.FC<IDevice> = ({ deviceSize, style }) => {
           <Notch />
           <Symbols />
         </TopContainer>
-        <BottomContainer>
-          <Phone />
-          <Mail />
-          <Safari />
-          <Music />
-        </BottomContainer>
+        <BottomWrapper>
+          <Pagination />
+          <BottomContainer>
+            <Phone />
+            <Mail />
+            <Safari />
+            <Music />
+          </BottomContainer>
+        </BottomWrapper>
       </Screen>
       <LeftButtons>
         <SilentSwitch />
@@ -92,12 +96,19 @@ const TopContainer = styled.div`
   right: 0;
 `;
 
+const BottomWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: auto;
+`;
+
 const BottomContainer = styled.div`
   width: 94.6%;
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
-  margin-top: auto;
   margin-bottom: 16px;
   border-radius: 32px;
   box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
