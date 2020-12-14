@@ -6,8 +6,11 @@ import Symbols from './Symbols';
 // @ts-ignore FIXME
 import background from '../../assets/phone/background.png';
 
-export const DEVICE_WIDTH = 413;
-export const DEVICE_HEIGHT = 850;
+import Phone from './icons/Phone';
+import Mail from './icons/Mail';
+import Safari from './icons/Safari';
+import Music from './icons/Music';
+import { DEVICE_WIDTH } from './constants';
 
 interface IDevice {
   deviceSize: {
@@ -26,14 +29,6 @@ const Device: React.FC<IDevice> = ({ deviceSize, style }) => {
       .padStart(2, '0')}`;
   }, []);
 
-  const bottomContainerStyle = useMemo(
-    () => ({
-      height: deviceSize.width * 0.25,
-      padding: `${0.045 * deviceSize.width}px ${0.047 * deviceSize.width}px`,
-    }),
-    [deviceSize.width],
-  );
-
   return (
     <Bezel style={style}>
       <Screen style={{ backgroundImage: `url(${background})` }}>
@@ -42,7 +37,12 @@ const Device: React.FC<IDevice> = ({ deviceSize, style }) => {
           <Notch />
           <Symbols />
         </TopContainer>
-        <BottomContainer style={bottomContainerStyle}></BottomContainer>
+        <BottomContainer>
+          <Phone />
+          <Mail />
+          <Safari />
+          <Music />
+        </BottomContainer>
       </Screen>
       <LeftButtons>
         <SilentSwitch />
@@ -95,6 +95,7 @@ const TopContainer = styled.div`
 const BottomContainer = styled.div`
   width: 94.6%;
   display: flex;
+  justify-content: space-between;
   margin: 0 auto;
   margin-top: auto;
   margin-bottom: 16px;
@@ -104,6 +105,8 @@ const BottomContainer = styled.div`
   z-index: 1;
   background: inherit;
   overflow: hidden;
+  height: ${DEVICE_WIDTH * 0.25}px;
+  padding: ${0.045 * DEVICE_WIDTH}px ${0.047 * DEVICE_WIDTH}px;
 
   &::before {
     content: '';
@@ -218,4 +221,9 @@ const rightButtonStyle = css`
 const PowerButton = styled.div`
   ${rightButtonStyle}
   height: 101px;
+`;
+
+const AppIcon = styled.div`
+  background: white;
+  border-radius: 18px;
 `;

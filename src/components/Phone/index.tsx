@@ -1,7 +1,8 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import styled from 'styled-components';
 
-import Device, { DEVICE_WIDTH, DEVICE_HEIGHT } from './Device';
+import Device from './Device';
+import { DEVICE_WIDTH, DEVICE_HEIGHT } from './constants';
 import { rhythm } from '../../utils/typography';
 import useWindowSize from '../../utils/useWindowSize';
 

@@ -25,6 +25,10 @@ export default createGlobalStyle`
     margin: 0;
     word-break: keep-all;
     background-color: #19181D;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 
   body,
