@@ -6,11 +6,18 @@ import Symbols from './Symbols';
 // @ts-ignore FIXME
 import background from '../../assets/phone/background.png';
 
+export const DEVICE_WIDTH = 413;
+export const DEVICE_HEIGHT = 850;
+
 interface IDevice {
+  deviceSize: {
+    width: number;
+    height: number;
+  };
   style?: React.CSSProperties;
 }
 
-const Device: React.FC<IDevice> = ({ style }) => {
+const Device: React.FC<IDevice> = ({ deviceSize, style }) => {
   const currentTime = useMemo(() => {
     const date = new Date();
     return `${date.getHours() || 12}:${date
@@ -18,6 +25,14 @@ const Device: React.FC<IDevice> = ({ style }) => {
       .toString()
       .padStart(2, '0')}`;
   }, []);
+
+  const bottomContainerStyle = useMemo(
+    () => ({
+      height: deviceSize.width * 0.25,
+      padding: `${0.045 * deviceSize.width}px ${0.047 * deviceSize.width}px`,
+    }),
+    [deviceSize.width],
+  );
 
   return (
     <Bezel style={style}>
@@ -27,6 +42,7 @@ const Device: React.FC<IDevice> = ({ style }) => {
           <Notch />
           <Symbols />
         </TopContainer>
+        <BottomContainer style={bottomContainerStyle}></BottomContainer>
       </Screen>
       <LeftButtons>
         <SilentSwitch />
@@ -74,6 +90,34 @@ const TopContainer = styled.div`
   top: -2px;
   left: 0;
   right: 0;
+`;
+
+const BottomContainer = styled.div`
+  width: 94.6%;
+  display: flex;
+  margin: 0 auto;
+  margin-top: auto;
+  margin-bottom: 16px;
+  border-radius: 32px;
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 1;
+  background: inherit;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    background: inherit;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.5);
+    filter: blur(24px);
+    margin: -20px;
+  }
 `;
 
 const Clock = styled.span`

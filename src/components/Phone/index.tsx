@@ -1,12 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import styled from 'styled-components';
 
-import Device from './Device';
+import Device, { DEVICE_WIDTH, DEVICE_HEIGHT } from './Device';
 import { rhythm } from '../../utils/typography';
 import useWindowSize from '../../utils/useWindowSize';
-
-const DEVICE_WIDTH = 413;
-const DEVICE_HEIGHT = 850;
 
 // ha ha
 interface IPhone {}
@@ -24,13 +21,22 @@ const Phone: React.FC<IPhone> = () => {
     setTransformScale(containerWidth / DEVICE_WIDTH);
   }, [screenWidth]);
 
+  const deviceSize = useMemo(
+    () => ({
+      width: transformScale * DEVICE_WIDTH,
+      height: transformScale * DEVICE_HEIGHT,
+    }),
+    [transformScale],
+  );
+
   return (
     <Wrapper
       style={{
-        height: transformScale * DEVICE_HEIGHT,
+        height: deviceSize.height,
       }}
     >
       <Device
+        deviceSize={deviceSize}
         style={{
           transform: `scale(${transformScale})`,
         }}
