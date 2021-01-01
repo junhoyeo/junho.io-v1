@@ -3,9 +3,9 @@ import styled, { css } from 'styled-components';
 
 import Symbols from './Symbols';
 import Pagination from './Pagination';
-
 import BottomIcons from './icons/BottomIcons';
-import { DEVICE_WIDTH } from './constants';
+import GridItem from './icons/GridItem';
+import { DEVICE_HEIGHT, DEVICE_WIDTH } from './constants';
 
 import background from '../../assets/phone/background.png';
 
@@ -34,6 +34,13 @@ const Device: React.FC<IDevice> = ({ deviceSize, style }) => {
           <Notch />
           <Symbols />
         </TopContainer>
+        <GridWrapper>
+          <GridContainer>
+            {new Array(23).fill(null).map((v, i) => (
+              <GridItem />
+            ))}
+          </GridContainer>
+        </GridWrapper>
         <BottomWrapper>
           <Pagination />
           <BottomContainer>
@@ -77,6 +84,7 @@ const Screen = styled.div`
   background-color: #01141f;
   border-radius: 36px;
   display: flex;
+  flex-direction: column;
   position: relative;
   background-size: cover;
   background-repeat: no-repeat;
@@ -93,17 +101,39 @@ const TopContainer = styled.div`
   right: 0;
 `;
 
+const GridWrapper = styled.div`
+  margin: 0 13px;
+  margin-top: ${DEVICE_HEIGHT * 0.0875}px;
+  display: flex;
+  flex: 1;
+`;
+
+const GridContainer = styled.div`
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, ${DEVICE_WIDTH * 0.156 + 22.6}px);
+  grid-template-rows: repeat(
+    auto-fill,
+    ${DEVICE_WIDTH * (0.016 + 0.15) + DEVICE_WIDTH * (0.0928 * 0.695)}px
+  );
+`;
+
 const BottomWrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: auto;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
 `;
 
 const BottomContainer = styled.div`
   width: 94.6%;
   display: flex;
+  align-items: center;
   justify-content: space-between;
   margin: 0 auto;
   margin-bottom: 16px;
@@ -113,7 +143,7 @@ const BottomContainer = styled.div`
   z-index: 1;
   background: inherit;
   overflow: hidden;
-  height: ${DEVICE_WIDTH * 0.25}px;
+  height: ${DEVICE_HEIGHT * 0.11}px;
   padding: ${0.045 * DEVICE_WIDTH}px ${0.047 * DEVICE_WIDTH}px;
   background-image: url(${background});
 
@@ -233,9 +263,4 @@ const rightButtonStyle = css`
 const PowerButton = styled.div`
   ${rightButtonStyle}
   height: 101px;
-`;
-
-const AppIcon = styled.div`
-  background: white;
-  border-radius: 18px;
 `;

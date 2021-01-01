@@ -34,8 +34,8 @@ interface IContainer {
 
 const Container = styled.div<IContainer>`
   background-color: white;
-  width: ${DEVICE_WIDTH * 0.16}px;
-  height: ${DEVICE_WIDTH * 0.16}px;
+  width: ${DEVICE_WIDTH * 0.156}px;
+  height: ${DEVICE_WIDTH * 0.156}px;
   border-radius: 18px;
   cursor: pointer;
   display: flex;
@@ -65,6 +65,6 @@ const MusicIcon = styled(Container)`
 `;
 
 const SafariImage = styled.img`
-  width: ${DEVICE_WIDTH * 0.16 * 0.88}px;
-  height: ${DEVICE_WIDTH * 0.16 * 0.88}px;
+  width: ${DEVICE_WIDTH * 0.156 * 0.88}px;
+  height: ${DEVICE_WIDTH * 0.156 * 0.88}px;
 `;

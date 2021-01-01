@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components';
 const Pagination = () => {
   return (
     <Wrapper>
-      <PaginationCircle />
+      {/* <PaginationCircle /> */}
       <PaginationCircle isSelected />
     </Wrapper>
   );
@@ -15,7 +15,8 @@ export default Pagination;
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
+  margin-top: 45px;
+  margin-bottom: 30px;
 `;
 
 interface IPaginationCircle {
