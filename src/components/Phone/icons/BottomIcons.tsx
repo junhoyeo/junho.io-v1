@@ -1,25 +1,26 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
+import AppIcon from './AppIcon';
 import { DEVICE_WIDTH } from '../constants';
 import phoneIcon from '../../../assets/phone/icons/bottom/phone.png';
 import mailIcon from '../../../assets/phone/icons/bottom/mail.png';
 import safariIcon from '../../../assets/phone/icons/bottom/safari.png';
 import musicIcon from '../../../assets/phone/icons/bottom/music.png';
 
-const Phone = () => <PhoneIcon backgroundImage={phoneIcon} />;
+const Phone = () => <PhoneIcon icon={phoneIcon} />;
 
-const Mail = () => <MailIcon backgroundImage={mailIcon} />;
+const Mail = () => <MailIcon icon={mailIcon} />;
 
 const Safari = () => {
   return (
-    <Container>
+    <AppIcon>
       <SafariImage src={safariIcon} />
-    </Container>
+    </AppIcon>
   );
 };
 
-const Music = () => <MusicIcon backgroundImage={musicIcon} />;
+const Music = () => <MusicIcon icon={musicIcon} />;
 
 export default {
   Phone,
@@ -28,39 +29,15 @@ export default {
   Music,
 };
 
-interface IContainer {
-  backgroundImage?: string;
-}
-
-const Container = styled.div<IContainer>`
-  background-color: white;
-  width: ${DEVICE_WIDTH * 0.156}px;
-  height: ${DEVICE_WIDTH * 0.156}px;
-  border-radius: 18px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  ${({ backgroundImage }) =>
-    backgroundImage &&
-    css`
-      && {
-        background-image: url(${backgroundImage});
-        background-size: cover;
-      }
-    `};
-`;
-
-const PhoneIcon = styled(Container)`
+const PhoneIcon = styled(AppIcon)`
   background-image: linear-gradient(to bottom, #89f384, #56ba43);
 `;
 
-const MailIcon = styled(Container)`
+const MailIcon = styled(AppIcon)`
   background-image: linear-gradient(to bottom, #1d52ef, #14e6fd);
 `;
 
-const MusicIcon = styled(Container)`
+const MusicIcon = styled(AppIcon)`
   background: linear-gradient(to bottom, #fc5d74, #fa233c);
 `;
 

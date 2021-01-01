@@ -1,18 +1,30 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import githubIcon from '../../../assets/phone/icons/github.webp';
+import AppIcon, { IAppIcon } from './AppIcon';
 import { DEVICE_WIDTH } from '../constants';
 
-const GridItem: React.FC = () => {
+export interface IGridItem extends IAppIcon {
+  name: string;
+  notifications?: number;
+}
+
+const GridItem: React.FC<IGridItem> = ({
+  icon,
+  color,
+  name,
+  notifications,
+}) => {
   return (
     <Wrapper>
-      <AppIcon style={{ backgroundImage: `url(${githubIcon})` }}>
-        <Notification>
-          <span>1</span>
-        </Notification>
+      <AppIcon icon={icon} color={color}>
+        {notifications && (
+          <Notification>
+            <span>1</span>
+          </Notification>
+        )}
       </AppIcon>
-      <AppName>GitHub</AppName>
+      <AppName>{name}</AppName>
     </Wrapper>
   );
 };
@@ -24,19 +36,6 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   cursor: pointer;
-`;
-
-const AppIcon = styled.div`
-  /* background-color: #1b2023; */
-  width: ${DEVICE_WIDTH * 0.156}px;
-  height: ${DEVICE_WIDTH * 0.156}px;
-  border-radius: 18px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  background-size: cover;
 `;
 
 const Notification = styled.div`

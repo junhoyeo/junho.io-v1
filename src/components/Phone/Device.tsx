@@ -5,7 +5,7 @@ import Symbols from './Symbols';
 import Pagination from './Pagination';
 import BottomIcons from './icons/BottomIcons';
 import GridItem from './icons/GridItem';
-import { DEVICE_HEIGHT, DEVICE_WIDTH } from './constants';
+import { DEVICE_HEIGHT, DEVICE_WIDTH, INSTALLED_APPS } from './constants';
 
 import background from '../../assets/phone/background.png';
 
@@ -36,8 +36,8 @@ const Device: React.FC<IDevice> = ({ deviceSize, style }) => {
         </TopContainer>
         <GridWrapper>
           <GridContainer>
-            {new Array(23).fill(null).map((v, i) => (
-              <GridItem />
+            {INSTALLED_APPS.map((appItem, appIndex) => (
+              <GridItem key={appIndex} {...appItem} />
             ))}
           </GridContainer>
         </GridWrapper>
