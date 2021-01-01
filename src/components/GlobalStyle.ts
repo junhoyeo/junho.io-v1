@@ -21,6 +21,12 @@ export default createGlobalStyle`
     text-decoration: none;
   }
 
+  img {
+    margin: 0;
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+
   body {
     margin: 0;
     word-break: keep-all;

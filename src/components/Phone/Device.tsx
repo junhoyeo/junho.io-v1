@@ -4,10 +4,7 @@ import styled, { css } from 'styled-components';
 import Symbols from './Symbols';
 import Pagination from './Pagination';
 
-import Phone from './icons/Phone';
-import Mail from './icons/Mail';
-import Safari from './icons/Safari';
-import Music from './icons/Music';
+import BottomIcons from './icons/BottomIcons';
 import { DEVICE_WIDTH } from './constants';
 
 // @ts-ignore FIXME
@@ -41,10 +38,10 @@ const Device: React.FC<IDevice> = ({ deviceSize, style }) => {
         <BottomWrapper>
           <Pagination />
           <BottomContainer>
-            <Phone />
-            <Mail />
-            <Safari />
-            <Music />
+            <BottomIcons.Phone />
+            <BottomIcons.Mail />
+            <BottomIcons.Safari />
+            <BottomIcons.Music />
           </BottomContainer>
         </BottomWrapper>
       </Screen>
