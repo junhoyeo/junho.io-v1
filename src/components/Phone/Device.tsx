@@ -7,7 +7,6 @@ import Pagination from './Pagination';
 import BottomIcons from './icons/BottomIcons';
 import { DEVICE_WIDTH } from './constants';
 
-// @ts-ignore FIXME
 import background from '../../assets/phone/background.png';
 
 interface IDevice {
