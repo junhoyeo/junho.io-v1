@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "esModuleInterop": true,
+    "isolatedModules": false,
+    "jsx": "preserve",
+    "lib": ["dom", "esnext"],
+    "module": "commonjs",
+    "noEmit": true,
+    "noImplicitAny": false,
+    "noUnusedLocals": false,
+    "strict": true,
+    "target": "esnext",
+    "typeRoots": ["src/types", "node_modules/@types"]
+  },
+  "exclude": ["node_modules", "public", ".cache"]
+}
