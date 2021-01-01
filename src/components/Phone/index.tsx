@@ -49,8 +49,7 @@ const Phone: React.FC<IPhone> = () => {
 export default Phone;
 
 const Wrapper = styled.div`
-  width: 100%;
   display: flex;
   justify-content: center;
-  margin-bottom: ${rhythm(2)};
+  margin: ${rhythm(2)} 0;
 `;

@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 import GlobalStyle from './GlobalStyle';
 import { rhythm } from '../utils/typography';
+import Phone from './Phone';
 
 interface ILayout {
   title?: React.ReactNode;
@@ -25,36 +26,58 @@ const Layout: React.FC<ILayout> = ({ title, description, children }) => {
   return (
     <>
       <GlobalStyle />
-      <Container>
-        <BrandWrapper>
-          <Link to="/">
-            <Brand>{data.site.siteMetadata.title}</Brand>
-          </Link>
-        </BrandWrapper>
-        {title && <Title>{title}</Title>}
-        {description && <Description>{description}</Description>}
-        <main>{children}</main>
-      </Container>
+      <Wrapper>
+        <Container>
+          <BrandWrapper>
+            <Link to="/">
+              <Brand>{data.site.siteMetadata.title}</Brand>
+            </Link>
+          </BrandWrapper>
+          {title && <Title>{title}</Title>}
+          {description && <Description>{description}</Description>}
+          <main>{children}</main>
+        </Container>
+        <Phone />
+      </Wrapper>
     </>
   );
 };
 
 export default Layout;
 
-const Container = styled.div`
+const Wrapper = styled.div`
   display: flex;
-  flex-direction: column;
   margin: 0 auto;
-  width: 100%;
-  max-width: 800px;
   min-height: 100vh;
+  max-width: 1080px;
+
+  @media screen and (max-width: 1200px) {
+    max-width: 900px;
+  }
+
+  @media screen and (max-width: 1100px) {
+    max-width: 850px;
+  }
 
   @media screen and (max-width: 1000px) {
     max-width: 75%;
+    flex-direction: column;
   }
 
   @media screen and (max-width: 500px) {
     max-width: 90%;
+  }
+`;
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-right: 32px;
+
+  @media screen and (max-width: 1000px) {
+    flex: unset;
+    margin-right: 0;
   }
 `;
 
