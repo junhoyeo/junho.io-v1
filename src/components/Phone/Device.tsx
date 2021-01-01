@@ -32,7 +32,7 @@ const Device: React.FC<IDevice> = ({ deviceSize, style }) => {
 
   return (
     <Bezel style={style}>
-      <Screen style={{ backgroundImage: `url(${background})` }}>
+      <Screen>
         <TopContainer>
           <Clock>{currentTime}</Clock>
           <Notch />
@@ -84,6 +84,7 @@ const Screen = styled.div`
   position: relative;
   background-size: cover;
   background-repeat: no-repeat;
+  background-image: url(${background});
 `;
 
 const TopContainer = styled.div`
@@ -118,6 +119,7 @@ const BottomContainer = styled.div`
   overflow: hidden;
   height: ${DEVICE_WIDTH * 0.25}px;
   padding: ${0.045 * DEVICE_WIDTH}px ${0.047 * DEVICE_WIDTH}px;
+  background-image: url(${background});
 
   &::before {
     content: '';
@@ -131,6 +133,9 @@ const BottomContainer = styled.div`
     box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.5);
     filter: blur(24px);
     margin: -20px;
+    background-size: cover;
+    opacity: 0.5;
+    background-position-y: bottom;
   }
 `;
 
