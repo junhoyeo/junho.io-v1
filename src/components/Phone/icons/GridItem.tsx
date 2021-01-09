@@ -5,8 +5,10 @@ import AppIcon, { IAppIcon } from './AppIcon';
 import { DEVICE_WIDTH } from '../constants';
 
 export interface IGridItem extends IAppIcon {
-  name: string;
+  name?: string;
   notifications?: number;
+  onClick?: () => void;
+  component?: React.ReactNode;
 }
 
 const GridItem: React.FC<IGridItem> = ({
@@ -14,9 +16,15 @@ const GridItem: React.FC<IGridItem> = ({
   color,
   name,
   notifications,
+  onClick,
+  component,
 }) => {
+  if (component) {
+    return <>{component}</>;
+  }
+
   return (
-    <Wrapper>
+    <Wrapper onClick={onClick}>
       <AppIcon icon={icon} color={color}>
         {notifications && (
           <Notification>
@@ -24,7 +32,7 @@ const GridItem: React.FC<IGridItem> = ({
           </Notification>
         )}
       </AppIcon>
-      <AppName>{name}</AppName>
+      <AppName>{name || 'Unknown'}</AppName>
     </Wrapper>
   );
 };

@@ -9,5 +9,11 @@ export const INSTALLED_APPS: IGridItem[] = [
     icon: require('../../assets/phone/icons/github.webp'),
     color: '#1b2023',
     notifications: 1,
+    onClick: () => {
+      setTimeout(() => {
+        const win = window.open('https://github.com/junhoyeo', '_blank');
+        win?.open();
+      }, 800);
+    },
   },
 ];
