@@ -16,13 +16,13 @@ export const INSTALLED_APPS: IGridItem[] = [
   //   },
   // },
   {
-    name: '미니맵',
-    icon: require('../../assets/phone/icons/minimap.webp'),
+    name: 'Clubhouse',
+    icon: require('../../assets/phone/icons/clubhouse.webp'),
     color: '#ffffff',
     notifications: 1,
     onClick: () => {
       setTimeout(() => {
-        location.href = '/hipservie/minimap/index.html';
+        location.href = 'https://clubhouse.junho.io';
       }, 800);
     },
   },
