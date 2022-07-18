@@ -57,6 +57,7 @@ const Notification = styled.div`
   position: absolute;
   top: -5px;
   right: -5px;
+  z-index: 2;
 
   span {
     font-size: 10px;

@@ -16,15 +16,9 @@ const bounce = keyframes`
     transform: scale(1.02);
     opacity: 0.95;
   }
-  60% {
+  80% {
     transform: scale(0.9);
     opacity: 1;
-  }
-  80% {
-    transform: scale(0.98);
-  }
-  100% {
-    transform: scale(0.95);
   }
 `;
 
@@ -38,12 +32,29 @@ const AppIcon = styled.div<IAppIcon>`
   justify-content: center;
   position: relative;
   transition: all 0.45s linear;
+  z-index: 0;
+
+  &::after {
+    content: '';
+    background: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 18px;
+    opacity: 0;
+    z-index: 1;
+  }
 
   &:hover {
+    &::after {
+      opacity: 1;
+    }
+  }
+
+  &:active {
     animation-name: ${bounce};
     animation-duration: 0.9s;
     animation-timing-function: ease-in-out;
-    animation-direction: alternate;
     transform: scale(1.08);
   }
 
