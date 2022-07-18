@@ -1,9 +1,14 @@
 import Head from 'next/head';
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { GlobalStyle } from '../components/GlobalStyle';
+import { typography } from '../utils/typography';
 
 function MyApp({ Component, pageProps }) {
+  useEffect(() => {
+    typography.injectStyles();
+  }, []);
+
   return (
     <React.Fragment>
       <Head>

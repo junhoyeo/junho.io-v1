@@ -10,6 +10,7 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     -webkit-user-drag: none;
     font-family: ${systemFontStack};
+    color: #F7F7F7;
 
     &::selection {
       background-color: rgba(29, 144, 255, 0.25);

@@ -14,7 +14,5 @@ export const typography = new Typography({
   bodyColor: '#F7F7F7',
 });
 
-typography.injectStyles();
-
 export const rhythm = typography.rhythm;
 export const scale = typography.scale;
