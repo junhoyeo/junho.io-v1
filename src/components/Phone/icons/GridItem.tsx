@@ -63,7 +63,6 @@ const Notification = styled.div`
     font-weight: bold;
     color: white;
     line-height: 1;
-    margin-top: 1.5px;
   }
 `;
 
