@@ -7,8 +7,6 @@ import BottomIcons from './icons/BottomIcons';
 import GridItem from './icons/GridItem';
 import { DEVICE_HEIGHT, DEVICE_WIDTH, INSTALLED_APPS } from './constants';
 
-import background from '../../assets/phone/background.png';
-
 interface IDevice {
   deviceSize: {
     width: number;
@@ -88,7 +86,7 @@ const Screen = styled.div`
   position: relative;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url(${background});
+  background-image: url('/assets/phone/background.png');
 `;
 
 const TopContainer = styled.div`
@@ -145,7 +143,7 @@ const BottomContainer = styled.div`
   overflow: hidden;
   height: ${DEVICE_HEIGHT * 0.11}px;
   padding: ${0.045 * DEVICE_WIDTH}px ${0.047 * DEVICE_WIDTH}px;
-  background-image: url(${background});
+  background-image: url('/assets/phone/background.png');
 
   &::before {
     content: '';
