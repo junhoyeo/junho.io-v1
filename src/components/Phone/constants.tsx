@@ -5,29 +5,40 @@ export const DEVICE_HEIGHT = 850;
 
 export const INSTALLED_APPS: IGridItem[] = [
   {
-    name: 'Alphaworks',
-    icon: '/assets/phone/icons/alphaworks.png',
-    color: '#FFFB00',
+    name: 'GitHub',
+    icon: '/assets/phone/icons/github.webp',
+    color: '#1b2023',
+    notifications: 3,
+    href: '#github',
   },
   {
     name: 'Bento',
     icon: '/assets/phone/icons/bento.png',
     color: '#18141c',
+    href: '#bento',
   },
   {
-    name: 'GitHub',
-    icon: '/assets/phone/icons/github.webp',
-    color: '#1b2023',
-    notifications: 3,
+    name: 'Alphaworks',
+    icon: '/assets/phone/icons/alphaworks.png',
+    color: '#FFFB00',
+    href: '#alphaworks',
   },
   {
-    name: 'PocketLesson',
-    icon: '/assets/phone/icons/pocketlesson.png',
-    color: '#4b66f9',
+    name: 'Keplr',
+    icon: '/assets/phone/icons/keplr.png',
+    color: '#00C3F8',
+    href: '#keplr',
   },
   {
     name: 'Toss',
     icon: '/assets/phone/icons/toss.png',
     color: '#ffffff',
+    href: '#toss',
+  },
+  {
+    name: 'PocketLesson',
+    icon: '/assets/phone/icons/pocketlesson.png',
+    color: '#4b66f9',
+    href: '#pocketlesson',
   },
 ];

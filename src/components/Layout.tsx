@@ -25,7 +25,9 @@ const Layout: React.FC<LayoutProps> = ({ title, description, children }) => {
           {description && <Description>{description}</Description>}
           <main>{children}</main>
         </Container>
-        <Phone />
+        <PhoneContainer>
+          <Phone />
+        </PhoneContainer>
       </Wrapper>
     </>
   );
@@ -38,6 +40,7 @@ const Wrapper = styled.div`
   margin: 0 auto;
   min-height: 100vh;
   max-width: 1080px;
+  position: relative;
 
   @media screen and (max-width: 1200px) {
     max-width: 900px;
@@ -50,6 +53,8 @@ const Wrapper = styled.div`
   @media screen and (max-width: 1000px) {
     max-width: 75%;
     flex-direction: column;
+
+    margin-bottom: 500px;
   }
 
   @media screen and (max-width: 500px) {
@@ -58,14 +63,14 @@ const Wrapper = styled.div`
 `;
 
 const Container = styled.div`
+  margin-right: 32px;
+  width: 55%;
   display: flex;
   flex-direction: column;
-  flex: 1;
-  margin-right: 32px;
 
   @media screen and (max-width: 1000px) {
-    flex: unset;
     margin-right: 0;
+    width: 100%;
   }
 `;
 
@@ -99,4 +104,28 @@ const Description = styled.p`
   color: #707176;
   padding-bottom: ${rhythm(0.5)};
   line-height: 1.45;
+`;
+
+const PhoneContainer = styled.div`
+  position: sticky;
+  top: 0;
+  right: 0;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (max-width: 1000px) {
+    position: fixed;
+    top: unset;
+    left: 0;
+    right: 0;
+    bottom: -500px;
+    pointer-events: none;
+
+    & > * {
+      pointer-events: auto;
+    }
+  }
 `;

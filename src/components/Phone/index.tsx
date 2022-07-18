@@ -51,5 +51,4 @@ export default Phone;
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
-  margin: ${rhythm(2)} 0;
 `;

@@ -1,3 +1,5 @@
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import React from 'react';
 import styled from 'styled-components';
 
@@ -9,6 +11,7 @@ export interface IGridItem extends IAppIcon {
   notifications?: number;
   onClick?: () => void;
   component?: React.ReactNode;
+  href?: string;
 }
 
 const GridItem: React.FC<IGridItem> = ({
@@ -18,13 +21,16 @@ const GridItem: React.FC<IGridItem> = ({
   notifications,
   onClick,
   component,
+  href,
 }) => {
+  const router = useRouter();
+
   if (component) {
     return <>{component}</>;
   }
 
   return (
-    <Wrapper onClick={onClick}>
+    <Wrapper onClick={!!href ? () => router.push(href) : onClick}>
       <AppIcon icon={icon} color={color}>
         {notifications && (
           <Notification>
