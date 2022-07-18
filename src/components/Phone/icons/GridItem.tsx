@@ -1,8 +1,8 @@
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
 import styled from 'styled-components';
 
+import { Analytics } from '../../../utils/analytics';
 import { DEVICE_WIDTH } from '../constants';
 import AppIcon, { IAppIcon } from './AppIcon';
 
@@ -30,7 +30,15 @@ const GridItem: React.FC<IGridItem> = ({
   }
 
   return (
-    <Wrapper onClick={!!href ? () => router.push(href) : onClick}>
+    <Wrapper
+      onClick={() => {
+        Analytics.logEvent('click_icon', { name: name ?? 'Unknown' });
+        if (!!href) {
+          router.push(href);
+        }
+        onClick?.();
+      }}
+    >
       <AppIcon icon={icon} color={color}>
         {notifications && (
           <Notification>

@@ -12,6 +12,7 @@
     "lint:fix": "prettier --write ."
   },
   "dependencies": {
+    "amplitude-js": "^8.18.5",
     "dedent": "^0.7.0",
     "next": "^12.2.2",
     "next-composed-plugins": "^1.0.1",
@@ -19,6 +20,7 @@
     "prismjs": "^1.28.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-intersection-observer": "^9.3.5",
     "react-typography": "^0.16.20",
     "styled-components": "^5.3.5",
     "styled-normalize": "^8.0.7",
