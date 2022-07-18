@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import { normalize } from 'styled-normalize';
+import { systemFontStack } from '../utils/typography';
 
 export const GlobalStyle = createGlobalStyle`
   ${normalize}
@@ -7,6 +8,7 @@ export const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
     -webkit-user-drag: none;
+    font-family: ${systemFontStack};
 
     &::selection {
       background-color: rgba(29, 144, 255, 0.25);
