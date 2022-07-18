@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Layout from '../components/Layout';
+import MetaHead from '../components/MetaHead';
 
 const IndexPage = () => (
   <Layout
@@ -21,6 +22,7 @@ const IndexPage = () => (
       </>
     }
   >
+    <MetaHead />
     <Section id="github">
       <h2>GitHub</h2>
       <p>
