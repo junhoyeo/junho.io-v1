@@ -128,4 +128,8 @@ const PhoneContainer = styled.div`
       pointer-events: auto;
     }
   }
+
+  @media screen and (max-width: 600px) {
+    bottom: -450px;
+  }
 `;
