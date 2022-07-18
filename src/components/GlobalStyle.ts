@@ -1,7 +1,7 @@
-import { createGlobalStyle } from 'styled-components';
+import { AnyStyledComponent, createGlobalStyle } from 'styled-components';
 import { normalize } from 'styled-normalize';
 
-export default createGlobalStyle`
+export const GlobalStyle = createGlobalStyle`
   ${normalize}
 
   * {
@@ -51,4 +51,5 @@ export default createGlobalStyle`
       outline: 0;
     }
   }
-`;
+` as any;
+// FIXME: Fix type definitions

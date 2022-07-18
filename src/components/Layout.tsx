@@ -1,36 +1,24 @@
+import Link from 'next/link'
 import React from 'react';
-import { useStaticQuery, graphql, Link } from 'gatsby';
 import styled from 'styled-components';
 
-import GlobalStyle from './GlobalStyle';
 import { rhythm } from '../utils/typography';
-import Phone from './Phone';
+import Phone from '../components/Phone';
 
-interface ILayout {
+type LayoutProps = {
   title?: React.ReactNode;
   description?: React.ReactNode;
   children?: React.ReactNode;
 }
 
-const Layout: React.FC<ILayout> = ({ title, description, children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `);
-
+const Layout: React.FC<LayoutProps> = ({ title, description, children }) => {
   return (
     <>
-      <GlobalStyle />
       <Wrapper>
         <Container>
           <BrandWrapper>
-            <Link to="/">
-              <Brand>{data.site.siteMetadata.title}</Brand>
+            <Link href="/">
+              <Brand>junho.io</Brand>
             </Link>
           </BrandWrapper>
           {title && <Title>{title}</Title>}

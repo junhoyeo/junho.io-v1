@@ -1,8 +1,7 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import Link from 'next/link';
 
 import Layout from '../components/Layout';
-import SEO from '../components/SEO';
 import Button from '../components/Button';
 
 const NotFoundPage = () => (
@@ -16,8 +15,7 @@ const NotFoundPage = () => (
       </>
     }
   >
-    <SEO title="404: Not found" />
-    <Link to="/">
+    <Link href="/">
       <Button>홈으로 돌아가기</Button>
     </Link>
   </Layout>
