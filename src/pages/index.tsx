@@ -1,6 +1,8 @@
+import Link from 'next/link';
 import React from 'react';
 import styled from 'styled-components';
 
+import Button, { SecondaryButton } from '../components/Button';
 import Layout from '../components/Layout';
 import MetaHead from '../components/MetaHead';
 
@@ -23,6 +25,15 @@ const IndexPage = () => (
     }
   >
     <MetaHead />
+    <div style={{ gap: 8, display: 'flex' }}>
+      <a href="https://github.com/junhoyeo" target="_blank">
+        <Button>GitHub</Button>
+      </a>
+      <a href="https://twitter.com/_junhoyeo" target="_blank">
+        <SecondaryButton>Twitter</SecondaryButton>
+      </a>
+    </div>
+    <div style={{ height: 100 }} />
     <Section id="github">
       <h2>GitHub</h2>
       <p>
