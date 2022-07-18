@@ -6,12 +6,12 @@ const IndexPage = () => (
   <Layout
     title={
       <>
-        안녕하세요.
+        Hello!
       </>
     }
     description={
       <>
-        제 블로그에 오신 걸 환영합니다.
+        Welcome to my blog.
       </>
     }
   >
