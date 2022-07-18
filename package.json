@@ -11,6 +11,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "dedent": "^0.7.0",
     "next": "^12.2.2",
     "next-composed-plugins": "^1.0.1",
     "next-plugin-svgr": "^1.1.1",
@@ -23,6 +24,7 @@
     "typography": "^0.16.21"
   },
   "devDependencies": {
+    "@types/dedent": "^0.7.0",
     "@types/node": "^18.0.6",
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
