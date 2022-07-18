@@ -3,24 +3,20 @@ import styled from 'styled-components';
 
 import AppIcon from './AppIcon';
 import { DEVICE_WIDTH } from '../constants';
-import phoneIcon from '../../../assets/phone/icons/bottom/phone.png';
-import mailIcon from '../../../assets/phone/icons/bottom/mail.png';
-import safariIcon from '../../../assets/phone/icons/bottom/safari.png';
-import musicIcon from '../../../assets/phone/icons/bottom/music.png';
 
-const Phone = () => <PhoneIcon icon={phoneIcon} />;
+const Phone = () => <PhoneIcon icon="/assets/phone/icons/bottom/phone.png" />;
 
-const Mail = () => <MailIcon icon={mailIcon} />;
+const Mail = () => <MailIcon icon="/assets/phone/icons/bottom/mail.png" />;
 
 const Safari = () => {
   return (
     <AppIcon>
-      <SafariImage src={safariIcon} />
+      <SafariImage src="/assets/phone/icons/bottom/safari.png" />
     </AppIcon>
   );
 };
 
-const Music = () => <MusicIcon icon={musicIcon} />;
+const Music = () => <MusicIcon icon="/assets/phone/icons/bottom/music.png" />;
 
 export default {
   Phone,

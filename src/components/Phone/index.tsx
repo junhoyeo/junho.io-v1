@@ -10,7 +10,7 @@ import useWindowSize from '../../utils/useWindowSize';
 interface IPhone {}
 
 const Phone: React.FC<IPhone> = () => {
-  const { screenWidth } = useWindowSize();
+  const { screenWidth = 1980 } = useWindowSize();
   const [transformScale, setTransformScale] = useState<number>(1);
 
   useEffect(() => {
