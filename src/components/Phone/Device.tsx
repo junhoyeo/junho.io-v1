@@ -113,7 +113,7 @@ const GridContainer = styled.div`
   grid-template-columns: repeat(auto-fill, ${DEVICE_WIDTH * 0.156 + 22.6}px);
   grid-template-rows: repeat(
     auto-fill,
-    ${DEVICE_WIDTH * (0.016 + 0.15) + DEVICE_WIDTH * (0.0928 * 0.695)}px
+    ${DEVICE_WIDTH * (0.016 + 0.15) + DEVICE_WIDTH * (0.12 * 0.695)}px
   );
 `;
 

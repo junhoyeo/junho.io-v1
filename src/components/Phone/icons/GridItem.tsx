@@ -28,7 +28,7 @@ const GridItem: React.FC<IGridItem> = ({
       <AppIcon icon={icon} color={color}>
         {notifications && (
           <Notification>
-            <span>1</span>
+            <span>{notifications}</span>
           </Notification>
         )}
       </AppIcon>
@@ -68,7 +68,7 @@ const Notification = styled.div`
 
 const AppName = styled.span`
   margin-top: ${DEVICE_WIDTH * 0.016}px;
-  font-size: ${DEVICE_WIDTH * 0.032}px;
+  font-size: ${DEVICE_WIDTH * 0.026}px;
   font-weight: 500;
   line-height: 1.45;
   user-select: none;
