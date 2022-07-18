@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import AppIcon from './AppIcon';
 import { DEVICE_WIDTH } from '../constants';
+import AppIcon from './AppIcon';
 
 const Phone = () => <PhoneIcon icon="/assets/phone/icons/bottom/phone.png" />;
 

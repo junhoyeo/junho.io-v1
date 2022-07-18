@@ -1,15 +1,15 @@
-import Link from 'next/link'
+import Link from 'next/link';
 import React from 'react';
 import styled from 'styled-components';
 
-import { rhythm } from '../utils/typography';
 import Phone from '../components/Phone';
+import { rhythm } from '../utils/typography';
 
 type LayoutProps = {
   title?: React.ReactNode;
   description?: React.ReactNode;
   children?: React.ReactNode;
-}
+};
 
 const Layout: React.FC<LayoutProps> = ({ title, description, children }) => {
   return (

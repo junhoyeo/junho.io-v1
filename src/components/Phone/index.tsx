@@ -1,10 +1,10 @@
-import React, { useEffect, useState, useMemo } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import styled from 'styled-components';
 
-import Device from './Device';
-import { DEVICE_WIDTH, DEVICE_HEIGHT } from './constants';
 import { rhythm } from '../../utils/typography';
 import useWindowSize from '../../utils/useWindowSize';
+import Device from './Device';
+import { DEVICE_HEIGHT, DEVICE_WIDTH } from './constants';
 
 // ha ha
 interface IPhone {}

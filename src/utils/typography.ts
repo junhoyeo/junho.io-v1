@@ -1,6 +1,5 @@
-import Typography from 'typography';
-
 import dedent from 'dedent';
+import Typography from 'typography';
 
 export const systemFontStack = dedent`
   Inter, 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Segoe UI',

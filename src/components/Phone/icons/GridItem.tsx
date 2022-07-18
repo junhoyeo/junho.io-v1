@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import AppIcon, { IAppIcon } from './AppIcon';
 import { DEVICE_WIDTH } from '../constants';
+import AppIcon, { IAppIcon } from './AppIcon';
 
 export interface IGridItem extends IAppIcon {
   name?: string;

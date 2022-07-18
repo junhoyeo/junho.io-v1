@@ -4,33 +4,19 @@
     "esModuleInterop": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "lib": [
-      "dom",
-      "esnext"
-    ],
+    "lib": ["dom", "esnext"],
     "module": "commonjs",
     "noEmit": true,
     "noImplicitAny": false,
     "noUnusedLocals": false,
     "strict": true,
     "target": "esnext",
-    "typeRoots": [
-      "src/types",
-      "node_modules/@types"
-    ],
+    "typeRoots": ["src/types", "node_modules/@types"],
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "incremental": true,
     "resolveJsonModule": true
   },
-  "exclude": [
-    "node_modules",
-    "public",
-    ".cache"
-  ],
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx"
-  ]
+  "exclude": ["node_modules", "public", ".cache"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
 }

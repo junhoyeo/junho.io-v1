@@ -1,11 +1,11 @@
 import React, { useMemo } from 'react';
 import styled, { css } from 'styled-components';
 
-import Symbols from './Symbols';
 import Pagination from './Pagination';
+import Symbols from './Symbols';
+import { DEVICE_HEIGHT, DEVICE_WIDTH, INSTALLED_APPS } from './constants';
 import BottomIcons from './icons/BottomIcons';
 import GridItem from './icons/GridItem';
-import { DEVICE_HEIGHT, DEVICE_WIDTH, INSTALLED_APPS } from './constants';
 
 interface IDevice {
   deviceSize: {
