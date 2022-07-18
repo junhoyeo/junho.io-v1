@@ -1,5 +1,4 @@
-.cache
-package.json
-package-lock.json
-public
-static/
+*.md
+
+.next
+.vercel

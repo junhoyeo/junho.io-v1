@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import { normalize } from 'styled-normalize';
+
 import { systemFontStack } from '../utils/typography';
 
 export const GlobalStyle = createGlobalStyle`
