@@ -18,6 +18,20 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    word-break: keep-all;
+    background-color: #19181D;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
   a {
     color: inherit;
     cursor: pointer;
@@ -29,16 +43,6 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     user-select: none;
     -webkit-user-drag: none;
-  }
-
-  body {
-    margin: 0;
-    word-break: keep-all;
-    background-color: #19181D;
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
   }
 
   body,
