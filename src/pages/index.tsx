@@ -1,6 +1,23 @@
+import Image from 'next/image';
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 
+import alphaworksImage from '../assets/alphaworks-dir.jpg';
+import altiImage1 from '../assets/alti-1.png';
+import altiImage2 from '../assets/alti-2.png';
+import bentoImage1 from '../assets/bento-1.png';
+import bentoImage2 from '../assets/bento-2.png';
+import cybergalzImage1 from '../assets/cybergalz-1.png';
+import cybergalzImage2 from '../assets/cybergalz-2.png';
+import githubImage1 from '../assets/github-1.png';
+import githubImage2 from '../assets/github-2.png';
+import manythingsImage from '../assets/manythings.png';
+import pocketlessonImage1 from '../assets/pocketlesson-1.png';
+import pocketlessonImage2 from '../assets/pocketlesson-2.png';
+import tossImage1 from '../assets/toss-1.png';
+import tossImage2 from '../assets/toss-2.png';
+import tossImage3 from '../assets/toss-3.png';
+import tossImage4 from '../assets/toss-4.png';
 import Button, { SecondaryButton } from '../components/Button';
 import Layout from '../components/Layout';
 import MetaHead from '../components/MetaHead';
@@ -86,17 +103,17 @@ const IndexPage = () => {
           for a complete list of my projects.
         </p>
         <ImageRow>
-          <img src="/assets/github-2.png" />
-          <img src="/assets/github-1.png" />
+          <Image src={githubImage2} placeholder="blur" />
+          <Image src={githubImage1} placeholder="blur" />
         </ImageRow>
       </Section>
       <Section id="bento">
         <h2>Bento</h2>
         <ImageRow>
-          <img src="/assets/bento-1.png" />
+          <Image src={bentoImage1} placeholder="blur" />
         </ImageRow>
         <ImageRow>
-          <img src="/assets/bento-2.png" />
+          <Image src={bentoImage2} placeholder="blur" />
         </ImageRow>
         <p>
           I made various dashboard apps for some protocols/wallets part-time and
@@ -135,26 +152,26 @@ const IndexPage = () => {
           <strong>Developer in Residence 2021.10 ~</strong>
         </p>
         <ImageRow>
-          <img src="/assets/alphaworks-dir.jpg" />
+          <Image src={alphaworksImage} placeholder="blur" />
         </ImageRow>
         <p>
           Worked on various NFT projects and frontends. Developed crafting
           solution to function customisable NFTs on Immutable X.
         </p>
         <ImageRow>
-          <img src="/assets/manythings.png" />
+          <Image src={manythingsImage} placeholder="blur" />
         </ImageRow>
         <ImageRow>
-          <img src="/assets/alti-1.png" />
+          <Image src={altiImage1} placeholder="blur" />
         </ImageRow>
         <ImageRow>
-          <img src="/assets/alti-2.png" />
+          <Image src={altiImage2} placeholder="blur" />
         </ImageRow>
         <ImageRow>
-          <img src="/assets/cybergalz-1.png" />
+          <Image src={cybergalzImage1} placeholder="blur" />
         </ImageRow>
         <ImageRow>
-          <img src="/assets/cybergalz-2.png" />
+          <Image src={cybergalzImage2} placeholder="blur" />
         </ImageRow>
         <Section id="keplr">
           <h3>Keplr</h3>
@@ -219,10 +236,10 @@ const IndexPage = () => {
           products such as Toss Feed 3.0, Home, and Notice.
         </p>
         <ImageRow>
-          <img src="/assets/toss-1.png" />
-          <img src="/assets/toss-2.png" />
-          <img src="/assets/toss-3.png" />
-          <img src="/assets/toss-4.png" />
+          <Image src={tossImage1} placeholder="blur" />
+          <Image src={tossImage2} placeholder="blur" />
+          <Image src={tossImage3} placeholder="blur" />
+          <Image src={tossImage4} placeholder="blur" />
         </ImageRow>
       </Section>
       <Section id="pocketlesson">
@@ -261,8 +278,8 @@ const IndexPage = () => {
           </a>
         </p>
         <ImageRow>
-          <img src="/assets/pocketlesson-1.png" />
-          <img src="/assets/pocketlesson-2.png" />
+          <Image src={pocketlessonImage1} placeholder="blur" />
+          <Image src={pocketlessonImage2} placeholder="blur" />
         </ImageRow>
       </Section>
     </Layout>
