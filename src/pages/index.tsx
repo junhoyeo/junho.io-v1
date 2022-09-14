@@ -216,8 +216,8 @@ const IndexPage = () => {
         <h2>DeFi</h2>
         <p>
           Mainly contributing to the product side, I worked part-time on some
-          protocols powering DeFi. One had an average TVL of $330m, and the
-          other with a total trading volume of {`>`} $1.65b.
+          protocols powering DeFi. One had an average TVL of $330M, and the
+          other with a total trading volume of {`>`} $1.65B.
         </p>
       </Section>
       <Section id="toss">
