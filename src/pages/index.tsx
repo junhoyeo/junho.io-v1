@@ -95,6 +95,9 @@ const IndexPage = () => {
         <ImageRow>
           <img src="/assets/bento-1.png" />
         </ImageRow>
+        <ImageRow>
+          <img src="/assets/bento-2.png" />
+        </ImageRow>
         <p>
           I made various dashboard apps for some protocols/wallets part-time and
           was soon disappointed that they were moving cringely outside their
@@ -111,8 +114,7 @@ const IndexPage = () => {
         <p>
           That made me decide to build an open-source dashboard of my own. And
           after that, I began building, made the team, and named the app
-          "Bento." With the dashboard launching soon, you can check the page
-          here:{' '}
+          "Bento." You can check the page here:{' '}
           <a
             href="https://bento.finance"
             target="_blank"
@@ -139,9 +141,20 @@ const IndexPage = () => {
           Worked on various NFT projects and frontends. Developed crafting
           solution to function customisable NFTs on Immutable X.
         </p>
-        <p>And many things...</p>
         <ImageRow>
           <img src="/assets/manythings.png" />
+        </ImageRow>
+        <ImageRow>
+          <img src="/assets/alti-1.png" />
+        </ImageRow>
+        <ImageRow>
+          <img src="/assets/alti-2.png" />
+        </ImageRow>
+        <ImageRow>
+          <img src="/assets/cybergalz-1.png" />
+        </ImageRow>
+        <ImageRow>
+          <img src="/assets/cybergalz-2.png" />
         </ImageRow>
         <Section id="keplr">
           <h3>Keplr</h3>
