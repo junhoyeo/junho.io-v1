@@ -156,7 +156,7 @@ const IndexPage = () => {
         </ImageRow>
         <p>
           Worked on various NFT projects and frontends. Developed crafting
-          solution to function customisable NFTs on Immutable X.
+          solution to function customizable NFTs on Immutable X.
         </p>
         <ImageRow>
           <Image src={manythingsImage} placeholder="blur" />
