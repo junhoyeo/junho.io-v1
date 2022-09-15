@@ -31,7 +31,7 @@ export const INSTALLED_APPS: IGridItem[] = [
   },
   {
     name: 'Toss',
-    icon: '/assets/phone/icons/toss.png',
+    icon: '/assets/phone/icons/toss.webp',
     color: '#ffffff',
     href: '#toss',
   },
