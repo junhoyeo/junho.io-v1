@@ -2,7 +2,6 @@ import Image from 'next/image';
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 
-import alphaworksImage from '../assets/alphaworks-dir.jpg';
 import altiImage1 from '../assets/alti-1.png';
 import altiImage2 from '../assets/alti-2.png';
 import bentoImage1 from '../assets/bento-1.png';
@@ -102,19 +101,17 @@ const IndexPage = () => {
           </a>{' '}
           for a complete list of my projects.
         </p>
-        <ImageRow>
+        <ImageList>
           <Image src={githubImage2} placeholder="blur" />
           <Image src={githubImage1} placeholder="blur" />
-        </ImageRow>
+        </ImageList>
       </Section>
       <Section id="bento">
         <h2>Bento</h2>
-        <ImageRow>
+        <ImageList>
           <Image src={bentoImage1} placeholder="blur" />
-        </ImageRow>
-        <ImageRow>
           <Image src={bentoImage2} placeholder="blur" />
-        </ImageRow>
+        </ImageList>
         <p>
           I made various dashboard apps for some protocols/wallets part-time and
           was soon disappointed that they were moving cringely outside their
@@ -151,28 +148,17 @@ const IndexPage = () => {
         <p>
           <strong>Developer in Residence 2021.10 ~</strong>
         </p>
-        <ImageRow>
-          <Image src={alphaworksImage} placeholder="blur" />
-        </ImageRow>
         <p>
           Worked on various NFT projects and frontends. Developed crafting
           solution to function customizable NFTs on Immutable X.
         </p>
-        <ImageRow>
+        <ImageList>
           <Image src={manythingsImage} placeholder="blur" />
-        </ImageRow>
-        <ImageRow>
           <Image src={altiImage1} placeholder="blur" />
-        </ImageRow>
-        <ImageRow>
           <Image src={altiImage2} placeholder="blur" />
-        </ImageRow>
-        <ImageRow>
           <Image src={cybergalzImage1} placeholder="blur" />
-        </ImageRow>
-        <ImageRow>
           <Image src={cybergalzImage2} placeholder="blur" />
-        </ImageRow>
+        </ImageList>
         <Section id="keplr">
           <h3>Keplr</h3>
           <p>
@@ -235,12 +221,12 @@ const IndexPage = () => {
           Simplicity 21(an internal design conference). Also maintained web
           products such as Toss Feed 3.0, Home, and Notice.
         </p>
-        <ImageRow>
+        <ImageList>
           <Image src={tossImage1} placeholder="blur" />
           <Image src={tossImage2} placeholder="blur" />
           <Image src={tossImage3} placeholder="blur" />
           <Image src={tossImage4} placeholder="blur" />
-        </ImageRow>
+        </ImageList>
       </Section>
       <Section id="pocketlesson">
         <h2>PocketLesson</h2>
@@ -277,10 +263,10 @@ const IndexPage = () => {
             check-mergeable
           </a>
         </p>
-        <ImageRow>
+        <ImageList>
           <Image src={pocketlessonImage1} placeholder="blur" />
           <Image src={pocketlessonImage2} placeholder="blur" />
-        </ImageRow>
+        </ImageList>
       </Section>
     </Layout>
   );
@@ -292,7 +278,7 @@ const Section = styled(TrackedSection)`
   padding-top: 16px;
 `;
 
-const ImageRow = styled.div`
+const ImageList = styled.div`
   margin-bottom: 16px;
   width: 100%;
   display: flex;
