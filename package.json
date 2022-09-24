@@ -14,6 +14,7 @@
   "dependencies": {
     "amplitude-js": "^8.18.5",
     "dedent": "^0.7.0",
+    "framer-motion": "^7.3.6",
     "next": "^12.2.2",
     "next-composed-plugins": "^1.0.1",
     "next-plugin-svgr": "^1.1.1",
