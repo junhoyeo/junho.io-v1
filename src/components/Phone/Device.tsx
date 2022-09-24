@@ -63,6 +63,17 @@ const Device: React.FC<IDevice> = ({ deviceSize, style }) => {
 
 export default Device;
 
+const shadow = (position: 'to-top' | 'to-bottom') => {
+  const multiplier = position === 'to-top' ? 1 : -1;
+  return css`
+    box-shadow: 0px ${multiplier * 1.9}px 5.4px rgba(0, 0, 0, 0.066),
+      0px ${multiplier * 4.9}px 13.6px rgba(0, 0, 0, 0.098),
+      0px ${multiplier * 9.9}px 27.6px rgba(0, 0, 0, 0.127),
+      0px ${multiplier * 20.4}px 56.9px rgba(0, 0, 0, 0.163),
+      0px ${multiplier * 56}px 156px rgba(0, 0, 0, 0.24);
+  `;
+};
+
 const Bezel = styled.div`
   position: relative;
   background-color: #1a1b1b;
@@ -74,6 +85,12 @@ const Bezel = styled.div`
   padding: 18px;
   transform-origin: top;
   transition: 0.5s all ease-out;
+
+  ${shadow('to-top')}
+
+  @media screen and (max-width: 600px) {
+    ${shadow('to-bottom')}
+  }
 `;
 
 const Screen = styled.div`
