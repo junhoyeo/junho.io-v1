@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 
@@ -101,6 +102,13 @@ const IndexPage = () => {
           </a>{' '}
           for a complete list of my projects.
         </p>
+
+        <div style={{ marginBottom: 32 }}>
+          <Link href="/oss">
+            <Button>OSS</Button>
+          </Link>
+        </div>
+
         <ImageList>
           <Image src={githubImage2} placeholder="blur" />
           <Image src={githubImage1} placeholder="blur" />

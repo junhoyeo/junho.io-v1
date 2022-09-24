@@ -22,7 +22,7 @@ export default function OSSPage() {
             }}
           >
             <div>
-              <a href={repository.html_url}>
+              <a title={repository.name} href={repository.html_url} target="_blank">
                 {repository.fork && <span className="badge">Fork</span>}
                 {repository.archived && <span className="badge">Archived</span>}
                 {repository.name}
