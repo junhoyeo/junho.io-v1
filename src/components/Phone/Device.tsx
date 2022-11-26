@@ -14,10 +14,6 @@ const APP_CELL_GAP = APP_CELL_SIZE - APP_ICON_SIZE;
 const SCREEN_CONTENT_WIDTH = Math.floor(APP_CELL_SIZE * 4);
 
 interface IDevice {
-  deviceSize: {
-    width: number;
-    height: number;
-  };
   style?: React.CSSProperties;
 }
 
