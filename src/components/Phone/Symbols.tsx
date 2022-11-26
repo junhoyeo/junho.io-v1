@@ -33,7 +33,7 @@ const Container = styled.div`
   display: flex;
   position: absolute;
   top: 19px;
-  right: -8px;
+  right: 0px;
   height: 15px;
   align-items: flex-end;
   transform: scale(0.59);

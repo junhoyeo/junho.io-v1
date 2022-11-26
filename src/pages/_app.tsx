@@ -5,6 +5,8 @@ import { GlobalStyle } from '../components/GlobalStyle';
 import { Analytics } from '../utils/analytics';
 import { typography } from '../utils/typography';
 
+import '../styles/devices.css';
+
 Analytics.initialize();
 
 function MyApp({ Component, pageProps }) {
