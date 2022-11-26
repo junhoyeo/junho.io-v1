@@ -141,9 +141,10 @@ const IndexPage = () => {
       </Section>
       <Section id="zep-studio">
         <SectionTitle>ZEP Studio</SectionTitle>
-        <ImageList>
+        {/* <ImageList>
           <Image alt="" src={zepStudioImage} placeholder="blur" />
-        </ImageList>
+        </ImageList> */}
+        <p>TBD</p>
 
         <p>A Block Coding Editor for ZEP Script-based Apps</p>
 
