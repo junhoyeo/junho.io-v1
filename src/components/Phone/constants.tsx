@@ -5,11 +5,10 @@ export const DEVICE_HEIGHT = 850;
 
 export const INSTALLED_APPS: IGridItem[] = [
   {
-    name: 'GitHub',
-    icon: '/assets/phone/icons/github.webp',
-    color: '#1b2023',
-    notifications: 3,
-    href: '#github',
+    name: '$IBCX',
+    icon: '/assets/phone/icons/ibcx.jpeg',
+    color: '#080e2a',
+    href: '#ibcx',
   },
   {
     name: 'Bento',
@@ -40,5 +39,12 @@ export const INSTALLED_APPS: IGridItem[] = [
     icon: '/assets/phone/icons/pocketlesson.png',
     color: '#4b66f9',
     href: '#pocketlesson',
+  },
+  {
+    name: 'GitHub',
+    icon: '/assets/phone/icons/github.webp',
+    color: '#1b2023',
+    notifications: 3,
+    href: '#github',
   },
 ];

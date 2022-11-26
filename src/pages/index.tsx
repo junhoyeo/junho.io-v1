@@ -11,6 +11,7 @@ import cybergalzImage1 from '../assets/cybergalz-1.png';
 import cybergalzImage2 from '../assets/cybergalz-2.png';
 import githubImage1 from '../assets/github-1.png';
 import githubImage2 from '../assets/github-2.png';
+import ibcxImage from '../assets/ibcx-1.jpeg';
 import manythingsImage from '../assets/manythings.png';
 import pocketlessonImage1 from '../assets/pocketlesson-1.png';
 import pocketlessonImage2 from '../assets/pocketlesson-2.png';
@@ -69,49 +70,17 @@ const IndexPage = () => {
         </a>
       </div>
       <div style={{ height: 100 }} />
-      <Section id="github">
-        <h2>GitHub</h2>
+      <Section id="ibcx">
+        <h2>IBCX</h2>
         <p>
-          When I have an idea, I like to start something right away. I start
-          writing code. Almost all of my works are on GitHub, and it got me
-          1.3k+ stars and some grateful followers. Please check my{' '}
-          <a
-            href="https://github.com/junhoyeo?tab=repositories"
-            target="_blank"
-            style={{ color: '#47d1ff', textDecoration: 'underline' }}
-            onClick={() =>
-              Analytics.logEvent('click_inline_link', {
-                title: 'GitHub profile',
-              })
-            }
-          >
-            GitHub profile
-          </a>{' '}
-          and{' '}
-          <a
-            href="https://trendy-resume.vercel.app"
-            target="_blank"
-            style={{ color: '#47d1ff', textDecoration: 'underline' }}
-            onClick={() =>
-              Analytics.logEvent('click_inline_link', {
-                title: 'trendy-resume.vercel.app(Outdated)',
-              })
-            }
-          >
-            trendy-resume.vercel.app(Outdated)
-          </a>{' '}
-          for a complete list of my projects.
+          <strong>PM/FE 2022.10 ~</strong>
         </p>
-
-        <div style={{ marginBottom: 32 }}>
-          <Link href="/oss">
-            <Button>OSS</Button>
-          </Link>
-        </div>
-
+        <p>
+          Product Manager and Frontend Engineer of $IBCX, the first index token
+          in the Cosmos Ecosystem.
+        </p>
         <ImageList>
-          <Image src={githubImage2} placeholder="blur" />
-          <Image src={githubImage1} placeholder="blur" />
+          <Image src={ibcxImage} placeholder="blur" />
         </ImageList>
       </Section>
       <Section id="bento">
@@ -274,6 +243,51 @@ const IndexPage = () => {
         <ImageList>
           <Image src={pocketlessonImage1} placeholder="blur" />
           <Image src={pocketlessonImage2} placeholder="blur" />
+        </ImageList>
+      </Section>
+      <Section id="github">
+        <h2>GitHub</h2>
+        <p>
+          When I have an idea, I like to start something right away. I start
+          writing code. Almost all of my works are on GitHub, and it got me
+          1.3k+ stars and some grateful followers. Please check my{' '}
+          <a
+            href="https://github.com/junhoyeo?tab=repositories"
+            target="_blank"
+            style={{ color: '#47d1ff', textDecoration: 'underline' }}
+            onClick={() =>
+              Analytics.logEvent('click_inline_link', {
+                title: 'GitHub profile',
+              })
+            }
+          >
+            GitHub profile
+          </a>{' '}
+          and{' '}
+          <a
+            href="https://trendy-resume.vercel.app"
+            target="_blank"
+            style={{ color: '#47d1ff', textDecoration: 'underline' }}
+            onClick={() =>
+              Analytics.logEvent('click_inline_link', {
+                title: 'trendy-resume.vercel.app(Outdated)',
+              })
+            }
+          >
+            trendy-resume.vercel.app(Outdated)
+          </a>{' '}
+          for a complete list of my projects.
+        </p>
+
+        <div style={{ marginBottom: 32 }}>
+          <Link href="/oss">
+            <Button>OSS</Button>
+          </Link>
+        </div>
+
+        <ImageList>
+          <Image src={githubImage2} placeholder="blur" />
+          <Image src={githubImage1} placeholder="blur" />
         </ImageList>
       </Section>
     </Layout>
