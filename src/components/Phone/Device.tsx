@@ -1,4 +1,5 @@
-import React, { useMemo } from 'react';
+import createGlobe from 'cobe';
+import React, { useEffect, useMemo, useRef } from 'react';
 import styled, { css } from 'styled-components';
 
 import Pagination from './Pagination';
@@ -29,9 +30,52 @@ const Device: React.FC<IDevice> = ({ style }) => {
       .padStart(2, '0')}`;
   }, []);
 
+  const deviceFrameRef = useRef<HTMLDivElement>(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  useEffect(() => {
+    if (!canvasRef.current || !deviceFrameRef.current) {
+      return;
+    }
+
+    const globeSize = parseInt(
+      window.getComputedStyle(deviceFrameRef.current).width,
+    );
+
+    const globe = createGlobe(canvasRef.current, {
+      devicePixelRatio: 2,
+      width: globeSize * 2,
+      height: globeSize * 2,
+      phi: 0,
+      theta: 0,
+      dark: 1,
+      diffuse: 1.2,
+      scale: 1.25,
+      mapSamples: 16000,
+      mapBrightness: 6,
+      baseColor: [0.24, 0.24, 0.24],
+      markerColor: [0.24, 0.24, 0.24],
+      glowColor: [0.24, 0.24, 0.24],
+      markers: [],
+      onRender: () => {},
+    });
+
+    setTimeout(() => (canvasRef.current!.style.opacity = '1'));
+
+    window.onbeforeunload = () => {
+      if (canvasRef.current) {
+        canvasRef.current.style.transition = 'opacity 0.2s ease';
+        canvasRef.current.style.opacity = '0';
+      }
+    };
+
+    return () => {
+      globe.destroy();
+    };
+  }, []);
+
   return (
     <Phone className="device device-iphone-14-pro" style={style}>
-      <div className="device-frame">
+      <div ref={deviceFrameRef} className="device-frame">
         <Screen className="device-screen">
           <TopContainer>
             <Clock>{currentTime}</Clock>
@@ -53,6 +97,8 @@ const Device: React.FC<IDevice> = ({ style }) => {
               <BottomIcons.Music />
             </BottomContainer>
           </BottomWrapper>
+
+          <GlobeCanvas ref={canvasRef} />
         </Screen>
       </div>
       <div className="device-stripe"></div>
@@ -90,13 +136,19 @@ const Phone = styled.div`
 const Screen = styled.div`
   width: 100%;
   height: 100%;
-  background-color: #01141f;
   display: flex;
   flex-direction: column;
   position: relative;
+  overflow: hidden;
+  z-index: 0;
+
+  && {
+    background-color: #060606;
+  }
+
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url('/assets/phone/background.jpg');
+  background-image: url('https://images.unsplash.com/photo-1651833826115-7530e72ce504?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=927&q=80');
 `;
 
 const TopContainer = styled.div`
@@ -182,4 +234,17 @@ const Clock = styled.span`
   font-size: 17px;
   font-weight: bold;
   height: fit-content;
+`;
+
+const GlobeCanvas = styled.canvas`
+  width: 428px;
+  height: 428px;
+
+  opacity: 0;
+  transition: opacity 1s ease;
+
+  position: absolute;
+  top: 20%;
+  left: -20%;
+  z-index: -1;
 `;
