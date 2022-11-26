@@ -19,6 +19,7 @@ import tossImage1 from '../assets/toss-1.png';
 import tossImage2 from '../assets/toss-2.png';
 import tossImage3 from '../assets/toss-3.png';
 import tossImage4 from '../assets/toss-4.png';
+import zepStudioImage from '../assets/zep-studio.png';
 import Button, { SecondaryButton } from '../components/Button';
 import Layout from '../components/Layout';
 import MetaHead from '../components/MetaHead';
@@ -123,10 +124,20 @@ const IndexPage = () => {
           </a>
         </p>
         <p style={{ opacity: 0.66 }}>
-          Klaymakers22/ The Fi+ Track 2nd Place
+          🏆 Klaymakers22/ The Fi+ Track 2nd Place
           <br />
-          Klaymakers22/ The Ground X Challenge Winner
+          🏆 Klaymakers22/ The Ground X Challenge Winner
         </p>
+      </Section>
+      <Section id="zep-studio">
+        <SectionTitle>ZEP Studio</SectionTitle>
+        <ImageList>
+          <Image src={zepStudioImage} placeholder="blur" />
+        </ImageList>
+
+        <p>A Block Coding Editor for ZEP Script-based Apps</p>
+
+        <p style={{ opacity: 0.66 }}>🏆 JUNCTION ASIA/ ZEP Track 2nd Place</p>
       </Section>
       <Section id="alphaworks">
         <SectionTitle>Alphaworks</SectionTitle>

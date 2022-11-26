@@ -17,11 +17,18 @@ export const INSTALLED_APPS: IGridItem[] = [
     href: '#bento',
   },
   {
+    name: 'ZEP Studio',
+    icon: '/assets/phone/icons/zep-studio.png',
+    color: '#4d3ee9',
+    href: '#zep-studio',
+  },
+  {
     name: 'Alphaworks',
     icon: '/assets/phone/icons/alphaworks.png',
     color: '#FFFB00',
     href: '#alphaworks',
   },
+
   {
     name: 'Keplr',
     icon: '/assets/phone/icons/keplr.png',
