@@ -1,11 +1,47 @@
+import { getSvgPath } from 'figma-squircle';
 import styled, { css, keyframes } from 'styled-components';
 
 import { DEVICE_WIDTH } from '../constants';
 
-export interface IAppIcon {
+export type AppIconProps = React.HTMLAttributes<HTMLDivElement> & {
   icon?: string;
   color?: string;
-}
+  accessories?: React.ReactNode;
+  children?: React.ReactNode;
+};
+
+const APP_ICON_SIZE = DEVICE_WIDTH * 0.156;
+const svgPath = getSvgPath({
+  width: APP_ICON_SIZE,
+  height: APP_ICON_SIZE,
+  cornerRadius: 16,
+  cornerSmoothing: 0.8,
+});
+
+export const AppIcon: React.FC<AppIconProps> = ({
+  children,
+  icon,
+  color,
+  accessories,
+  ...props
+}) => {
+  return (
+    <Wrapper>
+      <Image icon={icon} color={color} {...props}>
+        {children}
+      </Image>
+      {accessories}
+    </Wrapper>
+  );
+};
+const Wrapper = styled.div`
+  width: ${APP_ICON_SIZE}px;
+  height: ${APP_ICON_SIZE}px;
+
+  position: relative;
+  transition: all 0.45s linear;
+  z-index: 0;
+`;
 
 const bounce = keyframes`
   0% {
@@ -22,17 +58,15 @@ const bounce = keyframes`
   }
 `;
 
-const AppIcon = styled.div<IAppIcon>`
-  width: ${DEVICE_WIDTH * 0.156}px;
-  height: ${DEVICE_WIDTH * 0.156}px;
-  border-radius: 18px;
+const Image = styled.div<AppIconProps>`
+  width: ${APP_ICON_SIZE}px;
+  height: ${APP_ICON_SIZE}px;
+  clip-path: path('${svgPath}');
+
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  transition: all 0.45s linear;
-  z-index: 0;
 
   &::after {
     content: '';
@@ -40,7 +74,6 @@ const AppIcon = styled.div<IAppIcon>`
     position: absolute;
     width: 100%;
     height: 100%;
-    border-radius: 18px;
     opacity: 0;
     z-index: 1;
   }
@@ -72,5 +105,3 @@ const AppIcon = styled.div<IAppIcon>`
       }
     `};
 `;
-
-export default AppIcon;

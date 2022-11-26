@@ -4,9 +4,9 @@ import styled from 'styled-components';
 
 import { Analytics } from '../../../utils/analytics';
 import { DEVICE_WIDTH } from '../constants';
-import AppIcon, { IAppIcon } from './AppIcon';
+import { AppIcon, AppIconProps } from './AppIcon';
 
-export interface IGridItem extends IAppIcon {
+export interface IGridItem extends AppIconProps {
   name?: string;
   notifications?: number;
   onClick?: () => void;
@@ -39,13 +39,17 @@ const GridItem: React.FC<IGridItem> = ({
         onClick?.();
       }}
     >
-      <AppIcon icon={icon} color={color}>
-        {notifications && (
-          <Notification>
-            <span>{notifications}</span>
-          </Notification>
-        )}
-      </AppIcon>
+      <AppIcon
+        icon={icon}
+        color={color}
+        accessories={
+          notifications && (
+            <Notification>
+              <span>{notifications}</span>
+            </Notification>
+          )
+        }
+      />
       <AppName>{name || 'Unknown'}</AppName>
     </Wrapper>
   );
