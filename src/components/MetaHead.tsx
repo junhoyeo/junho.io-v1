@@ -3,8 +3,7 @@ import { useRouter } from 'next/router';
 
 const meta = {
   title: "Hello, I'm Junho Yeo.",
-  description:
-    "Welcome to my site. I'm a 19-yo developer in Seoul, shaping the 2nd/3rd web. Sometimes a designer and dreamer, I just like to build things. Now I'm preparing the infrastructure—insight, followers, and capital— for a bigger dream.",
+  description: '19-yo dropout. Generalist Hacker, Shaping the 2nd/3rd web.',
   image: 'https://junho.io/assets/og-image.png',
   url: 'https://junho.io',
 };
