@@ -139,7 +139,14 @@ const PhoneContainer = styled.div<PhoneContainerProps>`
   justify-content: center;
   align-items: center;
 
+  @media screen and (max-height: 900px) {
+    padding-top: 24px;
+    align-items: flex-start;
+  }
+
   @media screen and (max-width: 1000px) {
+    padding-top: unset;
+
     position: fixed;
     top: unset;
     left: 0;
