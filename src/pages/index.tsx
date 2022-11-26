@@ -12,6 +12,7 @@ import cybergalzImage2 from '../assets/cybergalz-2.png';
 import githubImage1 from '../assets/github-1.png';
 import githubImage2 from '../assets/github-2.png';
 import ibcxImage from '../assets/ibcx-1.jpeg';
+import keplrImage1 from '../assets/keplr-1.png';
 import manythingsImage from '../assets/manythings.png';
 import pocketlessonImage1 from '../assets/pocketlesson-1.png';
 import pocketlessonImage2 from '../assets/pocketlesson-2.png';
@@ -157,9 +158,9 @@ const IndexPage = () => {
           <Image alt="" src={cybergalzImage2} placeholder="blur" />
         </ImageList>
         <Section id="keplr">
-          <h3>Keplr</h3>
+          <SectionTitle>Keplr</SectionTitle>
           <p>
-            Contributed to Keplr Wallet and the early version of the web
+            Contributed to Keplr Wallet and the early version of it's web
             dashboard.
           </p>
           <ul>
@@ -193,6 +194,9 @@ const IndexPage = () => {
               </a>
             </li>
           </ul>
+          <ImageList>
+            <Image alt="" src={keplrImage1} placeholder="blur" />
+          </ImageList>
         </Section>
       </Section>
       <Section id="defi">
@@ -336,7 +340,7 @@ const ImageList = styled.div`
   & > img {
     width: 100%;
     height: auto;
-    border-radius: 8px;
+    border-radius: 6px;
     ${shadow('to-bottom')}
   }
 `;
