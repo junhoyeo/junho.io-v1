@@ -20,7 +20,7 @@ import tossImage1 from '../assets/toss-1.png';
 import tossImage2 from '../assets/toss-2.png';
 import tossImage3 from '../assets/toss-3.png';
 import tossImage4 from '../assets/toss-4.png';
-import zepStudioImage from '../assets/zep-studio.png';
+// import zepStudioImage from '../assets/zep-studio.png';
 import Button, { SecondaryButton } from '../components/Button';
 import Layout from '../components/Layout';
 import MetaHead from '../components/MetaHead';
@@ -86,9 +86,44 @@ const IndexPage = () => {
         <p>
           <strong>PM/FE 2022.10 ~</strong>
         </p>
+        <p>Product Manager and Frontend Engineer of the development team.</p>
         <p>
-          Product Manager and Frontend Engineer of $IBCX, the first index token
-          in the Cosmos Ecosystem.
+          The idea behind the Cosmos Ecosystem is that future blockchain will be
+          application-specific, not a single chain. Until now, people who
+          believed in it bought $ATOM, but it lacked direct representation of
+          the potential of numerous projects built as app-chains.
+        </p>
+        <p>
+          Powered and governed by the{' '}
+          <a
+            href="https://ion.wtf"
+            target="_blank"
+            style={{ color: '#87d6ff', textDecoration: 'underline' }}
+            onClick={() =>
+              Analytics.logEvent('click_inline_link', {
+                title: 'ION DAO',
+              })
+            }
+          >
+            ION DAO
+          </a>
+          , we're proud to introduce $IBCX — the first fully-collateralized
+          index token for the Cosmos.
+        </p>
+        <p>
+          More details at:{' '}
+          <a
+            href="https://ion.wtf"
+            target="_blank"
+            style={{ color: '#87d6ff', textDecoration: 'underline' }}
+            onClick={() =>
+              Analytics.logEvent('click_inline_link', {
+                title: 'index.ion.wtf',
+              })
+            }
+          >
+            https://index.ion.wtf
+          </a>
         </p>
         <ImageList>
           <Image alt="" src={ibcxImage} placeholder="blur" />
