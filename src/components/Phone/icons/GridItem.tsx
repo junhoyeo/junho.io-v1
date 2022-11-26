@@ -1,4 +1,4 @@
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import React from 'react';
 import styled from 'styled-components';
 
@@ -34,7 +34,13 @@ const GridItem: React.FC<IGridItem> = ({
       onClick={() => {
         Analytics.logEvent('click_icon', { name: name ?? 'Unknown' });
         if (!!href) {
-          router.push(href);
+          if (href.startsWith('#')) {
+            document.querySelector(href)?.scrollIntoView({
+              behavior: 'smooth',
+            });
+          } else {
+            router.push(href);
+          }
         }
         onClick?.();
       }}

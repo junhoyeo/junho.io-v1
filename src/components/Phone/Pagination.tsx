@@ -1,11 +1,11 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 const Pagination = () => {
   return (
     <Wrapper>
       {/* <PaginationCircle /> */}
-      <PaginationCircle isSelected />
+      <PaginationCircle className="selected" />
     </Wrapper>
   );
 };
@@ -18,12 +18,7 @@ const Wrapper = styled.div`
   margin-top: 45px;
   margin-bottom: 30px;
 `;
-
-interface IPaginationCircle {
-  isSelected?: boolean;
-}
-
-const PaginationCircle = styled.div<IPaginationCircle>`
+const PaginationCircle = styled.div`
   width: 8px;
   height: 8px;
   border-radius: 50%;
@@ -33,9 +28,7 @@ const PaginationCircle = styled.div<IPaginationCircle>`
     margin-right: 10px;
   }
 
-  ${({ isSelected }) =>
-    isSelected &&
-    css`
-      background-color: white;
-    `};
+  &.selected {
+    background-color: white;
+  }
 `;

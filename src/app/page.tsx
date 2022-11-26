@@ -1,32 +1,34 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 
-import altiImage1 from '../assets/alti-1.png';
-import altiImage2 from '../assets/alti-2.png';
-import bentoImage1 from '../assets/bento-1.png';
-import bentoImage2 from '../assets/bento-2.png';
-import cybergalzImage1 from '../assets/cybergalz-1.png';
-import cybergalzImage2 from '../assets/cybergalz-2.png';
-import githubImage1 from '../assets/github-1.png';
-import githubImage2 from '../assets/github-2.png';
-import ibcxImage from '../assets/ibcx-1.jpeg';
-import keplrImage1 from '../assets/keplr-1.png';
-import manythingsImage from '../assets/manythings.png';
-import pocketlessonImage1 from '../assets/pocketlesson-1.png';
-import pocketlessonImage2 from '../assets/pocketlesson-2.png';
-import tossImage1 from '../assets/toss-1.png';
-import tossImage2 from '../assets/toss-2.png';
-import tossImage3 from '../assets/toss-3.png';
-import tossImage4 from '../assets/toss-4.png';
-import zepStudioImage from '../assets/zep-studio.png';
-import Button, { SecondaryButton } from '../components/Button';
-import Layout from '../components/Layout';
-import MetaHead from '../components/MetaHead';
-import { shadow } from '../components/Phone/Device';
-import { TrackedSection } from '../components/TrackedSection';
-import { Analytics } from '../utils/analytics';
+import Button, { SecondaryButton } from '@/components/Button';
+import Layout from '@/components/Layout';
+import { shadow } from '@/components/Phone/Device';
+import { TrackedSection } from '@/components/TrackedSection';
+import { Analytics } from '@/utils/analytics';
+
+import altiImage1 from './assets/alti-1.png';
+import altiImage2 from './assets/alti-2.png';
+import bentoImage1 from './assets/bento-1.png';
+import bentoImage2 from './assets/bento-2.png';
+import cybergalzImage1 from './assets/cybergalz-1.png';
+import cybergalzImage2 from './assets/cybergalz-2.png';
+import githubImage1 from './assets/github-1.png';
+import githubImage2 from './assets/github-2.png';
+import ibcxImage from './assets/ibcx-1.jpeg';
+import keplrImage1 from './assets/keplr-1.png';
+import manythingsImage from './assets/manythings.png';
+import pocketlessonImage1 from './assets/pocketlesson-1.png';
+import pocketlessonImage2 from './assets/pocketlesson-2.png';
+import tossImage1 from './assets/toss-1.png';
+import tossImage2 from './assets/toss-2.png';
+import tossImage3 from './assets/toss-3.png';
+import tossImage4 from './assets/toss-4.png';
+import zepStudioImage from './assets/zep-studio.png';
 
 const IndexPage = () => {
   useEffect(() => {
@@ -51,7 +53,6 @@ const IndexPage = () => {
         </>
       }
     >
-      <MetaHead />
       <Tip style={{ color: '#d1e9ff' }}>
         🔻
         <br />

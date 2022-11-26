@@ -7,6 +7,9 @@ module.exports = withPlugins(
     compiler: {
       styledComponents: true,
     },
+    experimental: {
+      appDir: true,
+    },
   },
   [withSvgr],
 );

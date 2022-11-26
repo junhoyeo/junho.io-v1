@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import React, { useEffect, useMemo, useState } from 'react';
 import styled from 'styled-components';
@@ -27,8 +29,8 @@ const Layout: React.FC<LayoutProps> = ({ title, description, children }) => {
   }, [screenWidth]);
 
   const phoneContainerProps = useMemo(() => {
-    const deviceHeight = transformScale * DEVICE_HEIGHT;
-    return { deviceHeight, bottom: deviceHeight * -0.55 };
+    const $deviceHeight = transformScale * DEVICE_HEIGHT;
+    return { $deviceHeight, $bottom: $deviceHeight * -0.55 };
   }, [transformScale]);
 
   return (
@@ -126,8 +128,8 @@ const Description = styled.p`
 `;
 
 type PhoneContainerProps = {
-  deviceHeight: number;
-  bottom: number;
+  $deviceHeight: number;
+  $bottom: number;
 };
 const PhoneContainer = styled.div<PhoneContainerProps>`
   position: sticky;
@@ -162,8 +164,8 @@ const PhoneContainer = styled.div<PhoneContainerProps>`
   @media screen and (max-width: 600px) {
     &,
     & > div {
-      height: ${({ deviceHeight }) => deviceHeight}px;
+      height: ${({ $deviceHeight }) => $deviceHeight}px;
     }
-    bottom: ${({ bottom }) => bottom}px;
+    bottom: ${({ $bottom }) => $bottom}px;
   }
 `;
