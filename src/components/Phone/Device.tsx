@@ -4,8 +4,13 @@ import styled, { css } from 'styled-components';
 import Pagination from './Pagination';
 import Symbols from './Symbols';
 import { DEVICE_HEIGHT, DEVICE_WIDTH, INSTALLED_APPS } from './constants';
+import { APP_ICON_SIZE } from './icons/AppIcon';
 import BottomIcons from './icons/BottomIcons';
 import GridItem from './icons/GridItem';
+
+const APP_CELL_SIZE = Math.floor(DEVICE_WIDTH * 0.156 + 22.6);
+const APP_CELL_GAP = APP_CELL_SIZE - APP_ICON_SIZE;
+const SCREEN_CONTENT_WIDTH = Math.floor(APP_CELL_SIZE * 4);
 
 interface IDevice {
   deviceSize: {
@@ -30,8 +35,7 @@ const Device: React.FC<IDevice> = ({ style }) => {
         <Screen className="device-screen">
           <TopContainer>
             <Clock>{currentTime}</Clock>
-            {/* <Notch /> */}
-            <Symbols />
+            <Symbols style={{ marginRight: -APP_CELL_GAP / 4 }} />
           </TopContainer>
           <GridWrapper>
             <GridContainer>
@@ -96,16 +100,22 @@ const Screen = styled.div`
 `;
 
 const TopContainer = styled.div`
+  margin: 0 auto;
+  width: ${SCREEN_CONTENT_WIDTH - APP_CELL_GAP}px;
+  height: 35px;
+
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
   position: absolute;
-  top: -2px;
-  left: 0;
-  right: 0;
+
+  top: 9px;
+  left: 5%;
+  right: 5%;
 `;
 
 const GridWrapper = styled.div`
-  margin: 0 13px;
+  margin: 0 auto;
   margin-top: ${DEVICE_HEIGHT * 0.0875}px;
   display: flex;
   flex: 1;
@@ -113,9 +123,9 @@ const GridWrapper = styled.div`
 
 const GridContainer = styled.div`
   height: 100%;
-  width: 100%;
+  width: ${SCREEN_CONTENT_WIDTH}px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, ${DEVICE_WIDTH * 0.156 + 22.6}px);
+  grid-template-columns: repeat(auto-fill, ${APP_CELL_SIZE}px);
   grid-template-rows: repeat(
     auto-fill,
     ${DEVICE_WIDTH * (0.016 + 0.15) + DEVICE_WIDTH * (0.12 * 0.695)}px
@@ -172,7 +182,4 @@ const Clock = styled.span`
   font-size: 17px;
   font-weight: bold;
   height: fit-content;
-  position: absolute;
-  top: 19px;
-  left: 26px;
 `;
