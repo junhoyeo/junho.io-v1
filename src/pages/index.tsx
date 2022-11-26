@@ -82,7 +82,7 @@ const IndexPage = () => {
           in the Cosmos Ecosystem.
         </p>
         <ImageList>
-          <Image src={ibcxImage} placeholder="blur" />
+          <Image alt="" src={ibcxImage} placeholder="blur" />
         </ImageList>
       </Section>
       <Section id="bento">
@@ -91,8 +91,8 @@ const IndexPage = () => {
           <strong>Founder ~</strong>
         </p>
         <ImageList>
-          <Image src={bentoImage1} placeholder="blur" />
-          <Image src={bentoImage2} placeholder="blur" />
+          <Image alt="" src={bentoImage1} placeholder="blur" />
+          <Image alt="" src={bentoImage2} placeholder="blur" />
         </ImageList>
         <p>
           I made various dashboard apps for some protocols/wallets part-time and
@@ -133,7 +133,7 @@ const IndexPage = () => {
       <Section id="zep-studio">
         <SectionTitle>ZEP Studio</SectionTitle>
         <ImageList>
-          <Image src={zepStudioImage} placeholder="blur" />
+          <Image alt="" src={zepStudioImage} placeholder="blur" />
         </ImageList>
 
         <p>A Block Coding Editor for ZEP Script-based Apps</p>
@@ -150,11 +150,11 @@ const IndexPage = () => {
           solution to function customizable NFTs on Immutable X.
         </p>
         <ImageList>
-          <Image src={manythingsImage} placeholder="blur" />
-          <Image src={altiImage1} placeholder="blur" />
-          <Image src={altiImage2} placeholder="blur" />
-          <Image src={cybergalzImage1} placeholder="blur" />
-          <Image src={cybergalzImage2} placeholder="blur" />
+          <Image alt="" src={manythingsImage} placeholder="blur" />
+          <Image alt="" src={altiImage1} placeholder="blur" />
+          <Image alt="" src={altiImage2} placeholder="blur" />
+          <Image alt="" src={cybergalzImage1} placeholder="blur" />
+          <Image alt="" src={cybergalzImage2} placeholder="blur" />
         </ImageList>
         <Section id="keplr">
           <h3>Keplr</h3>
@@ -219,10 +219,10 @@ const IndexPage = () => {
           products such as Toss Feed 3.0, Home, and Notice.
         </p>
         <ImageList>
-          <Image src={tossImage1} placeholder="blur" />
-          <Image src={tossImage2} placeholder="blur" />
-          <Image src={tossImage3} placeholder="blur" />
-          <Image src={tossImage4} placeholder="blur" />
+          <Image alt="" src={tossImage1} placeholder="blur" />
+          <Image alt="" src={tossImage2} placeholder="blur" />
+          <Image alt="" src={tossImage3} placeholder="blur" />
+          <Image alt="" src={tossImage4} placeholder="blur" />
         </ImageList>
       </Section>
       <Section id="pocketlesson">
@@ -261,8 +261,8 @@ const IndexPage = () => {
           </a>
         </p>
         <ImageList>
-          <Image src={pocketlessonImage1} placeholder="blur" />
-          <Image src={pocketlessonImage2} placeholder="blur" />
+          <Image alt="" src={pocketlessonImage1} placeholder="blur" />
+          <Image alt="" src={pocketlessonImage2} placeholder="blur" />
         </ImageList>
       </Section>
       <Section id="github">
@@ -306,8 +306,8 @@ const IndexPage = () => {
         </div>
 
         <ImageList>
-          <Image src={githubImage2} placeholder="blur" />
-          <Image src={githubImage1} placeholder="blur" />
+          <Image alt="" src={githubImage2} placeholder="blur" />
+          <Image alt="" src={githubImage1} placeholder="blur" />
         </ImageList>
       </Section>
     </Layout>
@@ -333,8 +333,9 @@ const ImageList = styled.div`
   flex-direction: column;
   gap: 8px;
 
-  & > * {
+  & > img {
     width: 100%;
+    height: auto;
     border-radius: 8px;
     ${shadow('to-bottom')}
   }
