@@ -23,6 +23,7 @@ import zepStudioImage from '../assets/zep-studio.png';
 import Button, { SecondaryButton } from '../components/Button';
 import Layout from '../components/Layout';
 import MetaHead from '../components/MetaHead';
+import { shadow } from '../components/Phone/Device';
 import { TrackedSection } from '../components/TrackedSection';
 import { Analytics } from '../utils/analytics';
 
@@ -332,8 +333,9 @@ const ImageList = styled.div`
   flex-direction: column;
   gap: 8px;
 
-  & > img {
+  & > * {
     width: 100%;
     border-radius: 8px;
+    ${shadow('to-bottom')}
   }
 `;

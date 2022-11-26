@@ -63,7 +63,7 @@ const Device: React.FC<IDevice> = ({ deviceSize, style }) => {
 
 export default Device;
 
-const shadow = (position: 'to-top' | 'to-bottom') => {
+export const shadow = (position: 'to-top' | 'to-bottom') => {
   const multiplier = position === 'to-top' ? 1 : -1;
   return css`
     box-shadow: 0px ${multiplier * 1.9}px 5.4px rgba(0, 0, 0, 0.066),
