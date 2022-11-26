@@ -71,7 +71,7 @@ const IndexPage = () => {
       </div>
       <div style={{ height: 100 }} />
       <Section id="ibcx">
-        <h2>IBCX</h2>
+        <SectionTitle>IBCX</SectionTitle>
         <p>
           <strong>PM/FE 2022.10 ~</strong>
         </p>
@@ -84,7 +84,10 @@ const IndexPage = () => {
         </ImageList>
       </Section>
       <Section id="bento">
-        <h2>Bento</h2>
+        <SectionTitle>Bento</SectionTitle>
+        <p>
+          <strong>Founder ~</strong>
+        </p>
         <ImageList>
           <Image src={bentoImage1} placeholder="blur" />
           <Image src={bentoImage2} placeholder="blur" />
@@ -119,9 +122,14 @@ const IndexPage = () => {
             https://bento.finance
           </a>
         </p>
+        <p style={{ opacity: 0.66 }}>
+          Klaymakers22/ The Fi+ Track 2nd Place
+          <br />
+          Klaymakers22/ The Ground X Challenge Winner
+        </p>
       </Section>
       <Section id="alphaworks">
-        <h2>Alphaworks</h2>
+        <SectionTitle>Alphaworks</SectionTitle>
         <p>
           <strong>Developer in Residence 2021.10 ~</strong>
         </p>
@@ -176,7 +184,7 @@ const IndexPage = () => {
         </Section>
       </Section>
       <Section id="defi">
-        <h2>DeFi</h2>
+        <SectionTitle>DeFi</SectionTitle>
         <p>
           Mainly contributing to the product side, I worked part-time on some
           protocols powering DeFi. One had an average TVL of $330M, and the
@@ -184,7 +192,7 @@ const IndexPage = () => {
         </p>
       </Section>
       <Section id="toss">
-        <h2>Toss</h2>
+        <SectionTitle>Toss</SectionTitle>
         <p>
           <strong>Frontend Chapter Support 2021.07 ~ 2021.09</strong>
         </p>
@@ -206,7 +214,7 @@ const IndexPage = () => {
         </ImageList>
       </Section>
       <Section id="pocketlesson">
-        <h2>PocketLesson</h2>
+        <SectionTitle>PocketLesson</SectionTitle>
         <p>
           <strong>Software Engineer 2021.02 ~ 2021.12</strong>
         </p>
@@ -246,7 +254,7 @@ const IndexPage = () => {
         </ImageList>
       </Section>
       <Section id="github">
-        <h2>GitHub</h2>
+        <SectionTitle>GitHub</SectionTitle>
         <p>
           When I have an idea, I like to start something right away. I start
           writing code. Almost all of my works are on GitHub, and it got me
@@ -298,6 +306,12 @@ export default IndexPage;
 
 const Section = styled(TrackedSection)`
   padding-top: 16px;
+`;
+const SectionTitle = styled.h2`
+  padding-top: 8px;
+  margin: 0;
+  margin-bottom: 16px;
+  font-weight: 900;
 `;
 
 const ImageList = styled.div`
