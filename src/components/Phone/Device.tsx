@@ -41,22 +41,31 @@ const Device: React.FC<IDevice> = ({ style }) => {
       window.getComputedStyle(deviceFrameRef.current).width,
     );
 
+    const southKorea: [number, number] = [37.5326, 127.024612];
+    const maxPhi = 6.28;
+    const greenwichPhi = 4.38;
+
+    let phi = (maxPhi / 180) * southKorea[1] + greenwichPhi;
+
     const globe = createGlobe(canvasRef.current, {
       devicePixelRatio: 2,
       width: globeSize * 2,
       height: globeSize * 2,
-      phi: 0,
-      theta: 0,
+      phi,
+      theta: 0.2,
       dark: 1,
       diffuse: 1.2,
       scale: 1.25,
       mapSamples: 16000,
       mapBrightness: 6,
-      baseColor: [0.24, 0.24, 0.24],
-      markerColor: [0.24, 0.24, 0.24],
+      baseColor: [0.12, 0.12, 0.12],
+      markerColor: [1, 1, 1],
       glowColor: [0.24, 0.24, 0.24],
-      markers: [],
-      onRender: () => {},
+      markers: [{ location: southKorea, size: 0.05 }],
+      onRender: (state) => {
+        state.phi = phi;
+        phi += 0.003;
+      },
     });
 
     setTimeout(() => (canvasRef.current!.style.opacity = '1'));
@@ -244,7 +253,7 @@ const GlobeCanvas = styled.canvas`
   transition: opacity 1s ease;
 
   position: absolute;
-  top: 20%;
+  top: 28%;
   left: -20%;
   z-index: -1;
 `;
