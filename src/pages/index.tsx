@@ -52,6 +52,14 @@ const IndexPage = () => {
       }
     >
       <MetaHead />
+      <Tip style={{ color: '#d1e9ff' }}>
+        🔻
+        <br />
+        <br />
+        Follow Me to
+        <br />
+        Invest in My Future
+      </Tip>
       <div style={{ gap: 8, display: 'flex' }}>
         <a
           href="https://github.com/junhoyeo"
@@ -319,6 +327,16 @@ const IndexPage = () => {
 };
 
 export default IndexPage;
+
+const Tip = styled.h3`
+  color: #d1e9ff;
+  background-color: #d1e9ff;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  font-size: 28px;
+`;
 
 const Section = styled(TrackedSection)`
   padding-top: 16px;

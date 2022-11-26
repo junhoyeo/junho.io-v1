@@ -19,7 +19,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   html {
-    scroll-behavior: smooth;
+    scroll-behavior: smooth !important;
   }
 
   body {
@@ -60,4 +60,3 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
 ` as any;
-// FIXME: Fix type definitions

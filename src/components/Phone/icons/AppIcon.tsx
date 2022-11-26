@@ -10,7 +10,7 @@ export type AppIconProps = React.HTMLAttributes<HTMLDivElement> & {
   children?: React.ReactNode;
 };
 
-const APP_ICON_SIZE = DEVICE_WIDTH * 0.156;
+export const APP_ICON_SIZE = Math.floor(DEVICE_WIDTH * 0.156);
 const svgPath = getSvgPath({
   width: APP_ICON_SIZE,
   height: APP_ICON_SIZE,

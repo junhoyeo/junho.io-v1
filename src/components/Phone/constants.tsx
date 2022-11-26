@@ -1,7 +1,7 @@
 import { IGridItem } from './icons/GridItem';
 
-export const DEVICE_WIDTH = 413;
-export const DEVICE_HEIGHT = 850;
+export const DEVICE_WIDTH = 428;
+export const DEVICE_HEIGHT = 868;
 
 export const INSTALLED_APPS: IGridItem[] = [
   {

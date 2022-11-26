@@ -1,9 +1,11 @@
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import styled from 'styled-components';
 
 import Phone from '../components/Phone';
 import { rhythm } from '../utils/typography';
+import useWindowSize from '../utils/useWindowSize';
+import { DEVICE_HEIGHT, DEVICE_WIDTH } from './Phone/constants';
 
 type LayoutProps = {
   title?: React.ReactNode;
@@ -12,6 +14,23 @@ type LayoutProps = {
 };
 
 const Layout: React.FC<LayoutProps> = ({ title, description, children }) => {
+  const { screenWidth = 1980 } = useWindowSize();
+  const [transformScale, setTransformScale] = useState<number>(1);
+
+  useEffect(() => {
+    if (screenWidth > 500) {
+      setTransformScale(1);
+      return;
+    }
+    const containerWidth = screenWidth * 0.9;
+    setTransformScale(containerWidth / DEVICE_WIDTH);
+  }, [screenWidth]);
+
+  const phoneContainerProps = useMemo(() => {
+    const deviceHeight = transformScale * DEVICE_HEIGHT;
+    return { deviceHeight, bottom: deviceHeight * -0.55 };
+  }, [transformScale]);
+
   return (
     <>
       <Wrapper>
@@ -25,8 +44,8 @@ const Layout: React.FC<LayoutProps> = ({ title, description, children }) => {
           {description && <Description>{description}</Description>}
           <main>{children}</main>
         </Container>
-        <PhoneContainer>
-          <Phone />
+        <PhoneContainer {...phoneContainerProps}>
+          <Phone transformScale={transformScale} />
         </PhoneContainer>
       </Wrapper>
     </>
@@ -106,7 +125,11 @@ const Description = styled.p`
   line-height: 1.45;
 `;
 
-const PhoneContainer = styled.div`
+type PhoneContainerProps = {
+  deviceHeight: number;
+  bottom: number;
+};
+const PhoneContainer = styled.div<PhoneContainerProps>`
   position: sticky;
   top: 0;
   right: 0;
@@ -116,7 +139,14 @@ const PhoneContainer = styled.div`
   justify-content: center;
   align-items: center;
 
+  @media screen and (max-height: 900px) {
+    padding-top: 24px;
+    align-items: flex-start;
+  }
+
   @media screen and (max-width: 1000px) {
+    padding-top: unset;
+
     position: fixed;
     top: unset;
     left: 0;
@@ -130,6 +160,10 @@ const PhoneContainer = styled.div`
   }
 
   @media screen and (max-width: 600px) {
-    bottom: -450px;
+    &,
+    & > div {
+      height: ${({ deviceHeight }) => deviceHeight}px;
+    }
+    bottom: ${({ bottom }) => bottom}px;
   }
 `;

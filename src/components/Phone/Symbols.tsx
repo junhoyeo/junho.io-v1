@@ -1,42 +1,46 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-const Symbols = () => {
+const Symbols: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props) => {
   return (
-    <Container>
-      <CellularList>
-        <CellularOne />
-        <CellularTwo />
-        <CellularThree />
-        <CellularFour />
-      </CellularList>
-      <WifiWrapper>
-        <Wifi>
+    <Wrapper {...props}>
+      <Container>
+        <CellularList>
+          <CellularOne />
+          <CellularTwo />
+          <CellularThree />
+          <CellularFour />
+        </CellularList>
+        <WifiWrapper>
           <Wifi>
-            <Wifi style={{ padding: 0 }} />
+            <Wifi>
+              <Wifi style={{ padding: 0 }} />
+            </Wifi>
           </Wifi>
-        </Wifi>
-      </WifiWrapper>
-      <BatteryWrapper>
-        <BatteryContainer>
-          <Battery />
-        </BatteryContainer>
-        <BatteryElectrode />
-      </BatteryWrapper>
-    </Container>
+        </WifiWrapper>
+        <BatteryWrapper>
+          <BatteryContainer>
+            <Battery />
+          </BatteryContainer>
+          <BatteryElectrode />
+        </BatteryWrapper>
+      </Container>
+    </Wrapper>
   );
 };
 
 export default Symbols;
 
+const Wrapper = styled.div`
+  width: fit-content;
+  display: flex;
+`;
 const Container = styled.div`
   display: flex;
-  position: absolute;
-  top: 19px;
-  right: -8px;
   height: 15px;
   align-items: flex-end;
-  transform: scale(0.59);
+  transform: scale(0.8);
+  transform-origin: right center;
 `;
 
 const CellularList = styled.div`
@@ -46,30 +50,30 @@ const CellularList = styled.div`
 
 const cellularStyle = css`
   background-color: white;
-  width: 3px;
-  margin-right: 3px;
+  width: 4px;
+  margin-right: 2.5px;
   border-top-left-radius: 1px;
   border-top-right-radius: 1px;
 `;
 
 const CellularOne = styled.div`
   ${cellularStyle}
-  height: 3px;
+  height: 6px;
 `;
 
 const CellularTwo = styled.div`
   ${cellularStyle}
-  height: 6px;
+  height: 8px;
 `;
 
 const CellularThree = styled.div`
   ${cellularStyle}
-  height: 9px;
+  height: 12px;
 `;
 
 const CellularFour = styled.div`
   ${cellularStyle}
-  height: 13px;
+  height: 16px;
 `;
 
 const WifiWrapper = styled.div`
@@ -90,20 +94,19 @@ const BatteryWrapper = styled.div`
 `;
 
 const BatteryContainer = styled.div`
-  border: 1px solid rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.66);
+  width: 34px;
   padding: 2px;
-  border-radius: 4px;
+  border-radius: 6px;
 `;
-
 const Battery = styled.div`
   background-color: white;
-  width: 36px;
+  width: 40%;
   height: 12px;
-  border-radius: 2px;
+  border-radius: 4px;
 `;
-
 const BatteryElectrode = styled.div`
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.66);
   height: 7px;
   width: 2px;
   margin-left: 2px;

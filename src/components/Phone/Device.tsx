@@ -1,21 +1,23 @@
-import React, { useMemo } from 'react';
+import createGlobe from 'cobe';
+import React, { useEffect, useMemo, useRef } from 'react';
 import styled, { css } from 'styled-components';
 
 import Pagination from './Pagination';
 import Symbols from './Symbols';
 import { DEVICE_HEIGHT, DEVICE_WIDTH, INSTALLED_APPS } from './constants';
+import { APP_ICON_SIZE } from './icons/AppIcon';
 import BottomIcons from './icons/BottomIcons';
 import GridItem from './icons/GridItem';
 
+const APP_CELL_SIZE = Math.floor(DEVICE_WIDTH * 0.156 + 22.6);
+const APP_CELL_GAP = APP_CELL_SIZE - APP_ICON_SIZE;
+const SCREEN_CONTENT_WIDTH = Math.floor(APP_CELL_SIZE * 4);
+
 interface IDevice {
-  deviceSize: {
-    width: number;
-    height: number;
-  };
   style?: React.CSSProperties;
 }
 
-const Device: React.FC<IDevice> = ({ deviceSize, style }) => {
+const Device: React.FC<IDevice> = ({ style }) => {
   const currentTime = useMemo(() => {
     const date = new Date();
     return `${date.getHours() || 12}:${date
@@ -24,40 +26,92 @@ const Device: React.FC<IDevice> = ({ deviceSize, style }) => {
       .padStart(2, '0')}`;
   }, []);
 
+  const deviceFrameRef = useRef<HTMLDivElement>(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  useEffect(() => {
+    if (!canvasRef.current || !deviceFrameRef.current) {
+      return;
+    }
+
+    const globeSize = parseInt(
+      window.getComputedStyle(deviceFrameRef.current).width,
+    );
+
+    const southKorea: [number, number] = [37.5326, 127.024612];
+    const maxPhi = 6.28;
+    const greenwichPhi = 4.38;
+
+    let phi = (maxPhi / 180) * southKorea[1] + greenwichPhi;
+
+    const globe = createGlobe(canvasRef.current, {
+      devicePixelRatio: 2,
+      width: globeSize * 2,
+      height: globeSize * 2,
+      phi,
+      theta: 0.2,
+      dark: 1,
+      diffuse: 1.2,
+      scale: 1.25,
+      mapSamples: 16000,
+      mapBrightness: 6,
+      baseColor: [0.12, 0.12, 0.12],
+      markerColor: [1, 1, 1],
+      glowColor: [0.24, 0.24, 0.24],
+      markers: [{ location: southKorea, size: 0.05 }],
+      onRender: (state) => {
+        state.phi = phi;
+        phi += 0.003;
+      },
+    });
+
+    setTimeout(() => (canvasRef.current!.style.opacity = '1'));
+
+    window.onbeforeunload = () => {
+      if (canvasRef.current) {
+        canvasRef.current.style.transition = 'opacity 0.2s ease';
+        canvasRef.current.style.opacity = '0';
+      }
+    };
+
+    return () => {
+      globe.destroy();
+    };
+  }, []);
+
   return (
-    <Bezel style={style}>
-      <Screen>
-        <TopContainer>
-          <Clock>{currentTime}</Clock>
-          <Notch />
-          <Symbols />
-        </TopContainer>
-        <GridWrapper>
-          <GridContainer>
-            {INSTALLED_APPS.map((appItem, appIndex) => (
-              <GridItem key={appIndex} {...appItem} />
-            ))}
-          </GridContainer>
-        </GridWrapper>
-        <BottomWrapper>
-          <Pagination />
-          <BottomContainer>
-            <BottomIcons.Phone />
-            <BottomIcons.Mail />
-            <BottomIcons.Safari />
-            <BottomIcons.Music />
-          </BottomContainer>
-        </BottomWrapper>
-      </Screen>
-      <LeftButtons>
-        <SilentSwitch />
-        <VolumeUpButton />
-        <VolumeDownButton />
-      </LeftButtons>
-      <RightButtons>
-        <PowerButton />
-      </RightButtons>
-    </Bezel>
+    <Phone className="device device-iphone-14-pro" style={style}>
+      <div ref={deviceFrameRef} className="device-frame">
+        <Screen className="device-screen">
+          <TopContainer>
+            <Clock>{currentTime}</Clock>
+            <Symbols style={{ marginRight: -APP_CELL_GAP / 4 }} />
+          </TopContainer>
+          <GridWrapper>
+            <GridContainer>
+              {INSTALLED_APPS.map((appItem, appIndex) => (
+                <GridItem key={appIndex} {...appItem} />
+              ))}
+            </GridContainer>
+          </GridWrapper>
+          <BottomWrapper>
+            <Pagination />
+            <BottomContainer>
+              <BottomIcons.Phone />
+              <BottomIcons.Mail />
+              <BottomIcons.Safari />
+              <BottomIcons.Music />
+            </BottomContainer>
+          </BottomWrapper>
+
+          <GlobeCanvas ref={canvasRef} />
+        </Screen>
+      </div>
+      <div className="device-stripe"></div>
+      <div className="device-header"></div>
+      <div className="device-sensors"></div>
+      <div className="device-btns"></div>
+      <div className="device-power"></div>
+    </Phone>
   );
 };
 
@@ -74,17 +128,8 @@ export const shadow = (position: 'to-top' | 'to-bottom') => {
   `;
 };
 
-const Bezel = styled.div`
-  position: relative;
-  background-color: #1a1b1b;
-  border-radius: 52px;
-  border: 1px solid #3d3d3d;
-  display: flex;
-  width: fit-content;
-  height: fit-content;
-  padding: 18px;
-  transform-origin: top;
-  transition: 0.5s all ease-out;
+const Phone = styled.div`
+  border-radius: 68px;
 
   ${shadow('to-top')}
 
@@ -94,30 +139,40 @@ const Bezel = styled.div`
 `;
 
 const Screen = styled.div`
-  width: 375px;
-  height: 812px;
-  background-color: #01141f;
-  border-radius: 36px;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   position: relative;
+  overflow: hidden;
+  z-index: 0;
+
+  && {
+    background-color: #060606;
+  }
+
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url('/assets/phone/background.png');
+  background-image: url('https://images.unsplash.com/photo-1651833826115-7530e72ce504?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=927&q=80');
 `;
 
 const TopContainer = styled.div`
-  width: 100%;
+  margin: 0 auto;
+  width: ${SCREEN_CONTENT_WIDTH - APP_CELL_GAP}px;
+  height: 35px;
+
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
   position: absolute;
-  top: -2px;
-  left: 0;
-  right: 0;
+
+  top: 9px;
+  left: 5%;
+  right: 5%;
 `;
 
 const GridWrapper = styled.div`
-  margin: 0 13px;
+  margin: 0 auto;
   margin-top: ${DEVICE_HEIGHT * 0.0875}px;
   display: flex;
   flex: 1;
@@ -125,9 +180,9 @@ const GridWrapper = styled.div`
 
 const GridContainer = styled.div`
   height: 100%;
-  width: 100%;
+  width: ${SCREEN_CONTENT_WIDTH}px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, ${DEVICE_WIDTH * 0.156 + 22.6}px);
+  grid-template-columns: repeat(auto-fill, ${APP_CELL_SIZE}px);
   grid-template-rows: repeat(
     auto-fill,
     ${DEVICE_WIDTH * (0.016 + 0.15) + DEVICE_WIDTH * (0.12 * 0.695)}px
@@ -184,98 +239,17 @@ const Clock = styled.span`
   font-size: 17px;
   font-weight: bold;
   height: fit-content;
+`;
+
+const GlobeCanvas = styled.canvas`
+  width: 428px;
+  height: 428px;
+
+  opacity: 0;
+  transition: opacity 1s ease;
+
   position: absolute;
-  top: 19px;
-  left: 26px;
-`;
-
-const Notch = styled.div`
-  height: 35px;
-  width: 230px;
-  background-color: #1a1b1b;
-  border-bottom-left-radius: 32px;
-  border-bottom-right-radius: 32px;
-  position: relative;
-
-  &::before {
-    content: '';
-    position: absolute;
-    height: 9px;
-    width: 8px;
-    top: 0px;
-    left: -7px;
-    background-image: radial-gradient(
-      circle at 0 100%,
-      rgba(204, 0, 0, 0) 7px,
-      #1a1b1b 8px
-    );
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    height: 9px;
-    width: 8px;
-    top: 0px;
-    right: -7px;
-    background-image: radial-gradient(
-      circle at 100% 100%,
-      rgba(204, 0, 0, 0) 7px,
-      #1a1b1b 8px
-    );
-  }
-`;
-
-const LeftButtons = styled.div`
-  position: absolute;
-  top: 120px;
-  left: -6px;
-`;
-
-const buttonStyle = css`
-  width: 7px;
-  background-color: #2b2b2c;
-  border: 2px solid #0f0f0f;
-`;
-
-const leftButtonStyle = css`
-  ${buttonStyle}
-  border-right: 0;
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
-`;
-
-const SilentSwitch = styled.div`
-  ${leftButtonStyle}
-  height: 36px;
-`;
-
-const VolumeUpButton = styled.div`
-  ${leftButtonStyle}
-  height: 62px;
-  margin-top: 27px;
-`;
-
-const VolumeDownButton = styled.div`
-  ${leftButtonStyle}
-  height: 62px;
-  margin-top: 7px;
-`;
-
-const RightButtons = styled.div`
-  position: absolute;
-  top: 182px;
-  right: -6px;
-`;
-
-const rightButtonStyle = css`
-  ${buttonStyle}
-  border-left: 0;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
-`;
-
-const PowerButton = styled.div`
-  ${rightButtonStyle}
-  height: 101px;
+  top: 28%;
+  left: -20%;
+  z-index: -1;
 `;
