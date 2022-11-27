@@ -84,6 +84,12 @@ const Device: React.FC<IDevice> = ({ style }) => {
     };
   }, []);
 
+  useEffect(() => {
+    setTimeout(() => {
+      setCallState(callState === 'default' ? 'large' : 'default');
+    }, 3_000);
+  }, []);
+
   return (
     <>
       <div className="phone device device-iphone-14-pro" style={style}>
