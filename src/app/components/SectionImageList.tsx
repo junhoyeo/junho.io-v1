@@ -7,6 +7,7 @@ const List: UListComponent = ({ style, ...props }) => (
   <ul
     {...props}
     style={{
+      margin: 0,
       padding: 0,
       marginBottom: 16,
       width: '100%',
