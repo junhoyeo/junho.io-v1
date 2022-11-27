@@ -5,6 +5,12 @@ export const typography = new Typography({
   baseLineHeight: 1.65,
   headerColor: '#F7F7F7',
   bodyColor: '#F7F7F7',
+  overrideStyles: () => ({
+    img: {
+      maxWidth: 'unset',
+      marginBottom: 0,
+    },
+  }),
 });
 
 export const rhythm = typography.rhythm;
