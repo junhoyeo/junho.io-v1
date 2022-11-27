@@ -92,19 +92,21 @@ const Device: React.FC<IDevice> = ({ style }) => {
             <div className="top-container">
               <span className="clock">{currentTime}</span>
 
-              <DynamicIsland
-                id="phone-call"
-                default="default"
-                state={callState}
-                setState={setCallState}
-                onClick={
-                  callState === 'default'
-                    ? () => setCallState('large')
-                    : () => setCallState('default')
-                }
-              >
-                <DynamicIslandPhoneCall size={callState} />
-              </DynamicIsland>
+              <div className="dynamic-island-container absolute h-[35px] top-0 left-0 right-0 w-full flex items-center">
+                <DynamicIsland
+                  id="phone-call"
+                  default="default"
+                  state={callState}
+                  setState={setCallState}
+                  onClick={
+                    callState === 'default'
+                      ? () => setCallState('large')
+                      : () => setCallState('default')
+                  }
+                >
+                  <DynamicIslandPhoneCall size={callState} />
+                </DynamicIsland>
+              </div>
 
               <Symbols style={{ marginRight: -APP_CELL_GAP / 4 }} />
             </div>
@@ -129,7 +131,6 @@ const Device: React.FC<IDevice> = ({ style }) => {
           </div>
         </div>
         <div className="device-stripe"></div>
-        {/* <div className="device-header"></div> */}
         <div className="device-sensors"></div>
         <div className="device-btns"></div>
         <div className="device-power"></div>
@@ -179,6 +180,11 @@ const Device: React.FC<IDevice> = ({ style }) => {
           top: 9px;
           left: 5%;
           right: 5%;
+        }
+
+        .device-iphone-14-pro .device-sensors::before,
+        .device-iphone-14-pro .device-sensors::after {
+          pointer-events: none;
         }
 
         .grid-wrapper {
