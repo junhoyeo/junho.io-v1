@@ -1,8 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
 
 import { DEVICE_WIDTH } from '../constants';
-import { AppIcon } from './AppIcon';
+import { AppIcon, AppIconProps } from './AppIcon';
 
 const Phone = () => <PhoneIcon icon="/assets/phone/icons/bottom/phone.png" />;
 
@@ -11,7 +10,13 @@ const Mail = () => <MailIcon icon="/assets/phone/icons/bottom/mail.png" />;
 const Safari = () => {
   return (
     <AppIcon>
-      <SafariImage src="/assets/phone/icons/bottom/safari.png" />
+      <img
+        src="/assets/phone/icons/bottom/safari.png"
+        style={{
+          width: DEVICE_WIDTH * 0.156 * 0.88,
+          height: DEVICE_WIDTH * 0.156 * 0.88,
+        }}
+      />
     </AppIcon>
   );
 };
@@ -25,19 +30,32 @@ export default {
   Music,
 };
 
-const PhoneIcon = styled(AppIcon)`
-  background-image: linear-gradient(to bottom, #89f384, #56ba43);
-`;
+const PhoneIcon: React.FC<AppIconProps> = ({ style, ...props }) => (
+  <AppIcon
+    {...props}
+    style={{
+      background: 'linear-gradient(to bottom, #89f384, #56ba43)',
+      ...style,
+    }}
+  />
+);
 
-const MailIcon = styled(AppIcon)`
-  background-image: linear-gradient(to bottom, #1d52ef, #14e6fd);
-`;
+const MailIcon: React.FC<AppIconProps> = ({ style, ...props }) => (
+  <AppIcon
+    {...props}
+    style={{
+      background: 'linear-gradient(to bottom, #1d52ef, #14e6fd)',
+      ...style,
+    }}
+  />
+);
 
-const MusicIcon = styled(AppIcon)`
-  background: linear-gradient(to bottom, #fc5d74, #fa233c);
-`;
-
-const SafariImage = styled.img`
-  width: ${DEVICE_WIDTH * 0.156 * 0.88}px;
-  height: ${DEVICE_WIDTH * 0.156 * 0.88}px;
-`;
+const MusicIcon: React.FC<AppIconProps> = ({ style, ...props }) => (
+  <AppIcon
+    {...props}
+    style={{
+      background: 'linear-gradient(to bottom, #fc5d74, #fa233c)',
+      ...style,
+    }}
+  />
+);

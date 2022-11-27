@@ -1,12 +1,13 @@
 import { useRouter } from 'next/navigation';
 import React from 'react';
-import styled from 'styled-components';
 
-import { Analytics } from '../../../utils/analytics';
+import { Analytics } from '@/utils/analytics';
+
 import { DEVICE_WIDTH } from '../constants';
 import { AppIcon, AppIconProps } from './AppIcon';
+import classes from './grid-item.module.scss';
 
-export interface IGridItem extends AppIconProps {
+export interface GridItemProps extends AppIconProps {
   name?: string;
   notifications?: number;
   onClick?: () => void;
@@ -14,7 +15,7 @@ export interface IGridItem extends AppIconProps {
   href?: string;
 }
 
-const GridItem: React.FC<IGridItem> = ({
+const GridItem: React.FC<GridItemProps> = ({
   icon,
   color,
   name,
@@ -30,7 +31,8 @@ const GridItem: React.FC<IGridItem> = ({
   }
 
   return (
-    <Wrapper
+    <div
+      className={classes.wrapper}
       onClick={() => {
         Analytics.logEvent('click_icon', { name: name ?? 'Unknown' });
         if (!!href) {
@@ -50,51 +52,23 @@ const GridItem: React.FC<IGridItem> = ({
         color={color}
         accessories={
           notifications && (
-            <Notification>
+            <span className={classes.notification}>
               <span>{notifications}</span>
-            </Notification>
+            </span>
           )
         }
       />
-      <AppName>{name || 'Unknown'}</AppName>
-    </Wrapper>
+      <span
+        className={classes.app_icon}
+        style={{
+          marginTop: DEVICE_WIDTH * 0.016,
+          fontSize: DEVICE_WIDTH * 0.026,
+        }}
+      >
+        {name || 'Unknown'}
+      </span>
+    </div>
   );
 };
 
 export default GridItem;
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  cursor: pointer;
-`;
-
-const Notification = styled.div`
-  height: 18px;
-  width: 18px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #ff392e;
-  position: absolute;
-  top: -5px;
-  right: -5px;
-  z-index: 2;
-
-  span {
-    font-size: 10px;
-    font-weight: bold;
-    color: white;
-    line-height: 1;
-  }
-`;
-
-const AppName = styled.span`
-  margin-top: ${DEVICE_WIDTH * 0.016}px;
-  font-size: ${DEVICE_WIDTH * 0.026}px;
-  font-weight: 500;
-  line-height: 1.45;
-  user-select: none;
-`;

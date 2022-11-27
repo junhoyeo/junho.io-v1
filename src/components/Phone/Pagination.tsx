@@ -1,34 +1,14 @@
 import React from 'react';
-import styled from 'styled-components';
 
-const Pagination = () => {
+import classes from './pagination.module.scss';
+
+const Pagination: React.FC = () => {
   return (
-    <Wrapper>
-      {/* <PaginationCircle /> */}
-      <PaginationCircle className="selected" />
-    </Wrapper>
+    <div className={classes.wrapper}>
+      {/* <div className={classes.pagination_circle} /> */}
+      <div className={`${classes.pagination_circle} selected`} />
+    </div>
   );
 };
 
 export default Pagination;
-
-const Wrapper = styled.div`
-  display: flex;
-  align-items: center;
-  margin-top: 45px;
-  margin-bottom: 30px;
-`;
-const PaginationCircle = styled.div`
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.5);
-
-  &:not(:last-child) {
-    margin-right: 10px;
-  }
-
-  &.selected {
-    background-color: white;
-  }
-`;

@@ -1,8 +1,8 @@
+import '@/styles/normalize.css';
 import '@/styles/devices.css';
+import '@/styles/global.scss';
 
-import { GlobalStyle } from '@/components/GlobalStyle';
-
-import { RootStyleRegistry } from './registry';
+import StyledJsxRegistry from './registry';
 
 export default function RootLayout({
   children,
@@ -25,15 +25,7 @@ export default function RootLayout({
       </head>
 
       <body>
-        <RootStyleRegistry>
-          <div>
-            <GlobalStyle />
-
-            {children}
-
-            <div id="portal" />
-          </div>
-        </RootStyleRegistry>
+        <StyledJsxRegistry>{children}</StyledJsxRegistry>
       </body>
     </html>
   );

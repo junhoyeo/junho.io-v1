@@ -1,10 +1,10 @@
 'use client';
 
-import { useMemo } from 'react';
-import styled from 'styled-components';
+import React, { useMemo } from 'react';
 
 import Layout from '@/components/Layout';
 import REPOS from '@/constants/github-repositories.json';
+import { UListComponent } from '@/types/html';
 
 import { ListItem } from './components/ListItem';
 
@@ -24,14 +24,20 @@ export default function OSSPage() {
   );
 }
 
-const List = styled.ul`
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
+const List: UListComponent = ({ style, ...props }) => (
+  <ul
+    {...props}
+    style={{
+      margin: 0,
+      padding: 0,
+      listStyleType: 'none',
 
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+      display: 'flex',
+      flexDirection: 'column',
+      gap: '20px',
 
-  margin-bottom: 300px;
-`;
+      marginBottom: '300px',
+      ...style,
+    }}
+  />
+);

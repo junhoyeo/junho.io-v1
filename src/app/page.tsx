@@ -1,14 +1,10 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import React, { useEffect } from 'react';
-import styled from 'styled-components';
 
-import Button, { SecondaryButton } from '@/components/Button';
+import { PrimaryButton, SecondaryButton } from '@/components/Button';
 import Layout from '@/components/Layout';
-import { shadow } from '@/components/Phone/Device';
-import { TrackedSection } from '@/components/TrackedSection';
 import { Analytics } from '@/utils/analytics';
 
 import altiImage1 from './assets/alti-1.png';
@@ -29,6 +25,10 @@ import tossImage2 from './assets/toss-2.png';
 import tossImage3 from './assets/toss-3.png';
 import tossImage4 from './assets/toss-4.png';
 import zepStudioImage from './assets/zep-studio.png';
+import { Section } from './components/Section';
+import { SectionImage } from './components/SectionImageList';
+import { SectionTitle } from './components/SectionTitle';
+import { Tip } from './components/Tip';
 
 const IndexPage = () => {
   useEffect(() => {
@@ -69,7 +69,7 @@ const IndexPage = () => {
             Analytics.logEvent('click_social_link', { name: 'GitHub' })
           }
         >
-          <Button>GitHub</Button>
+          <PrimaryButton>GitHub</PrimaryButton>
         </a>
         <a
           href="https://twitter.com/_junhoyeo"
@@ -126,19 +126,19 @@ const IndexPage = () => {
             https://index.ion.wtf
           </a>
         </p>
-        <ImageList>
-          <Image alt="" src={ibcxImage} placeholder="blur" />
-        </ImageList>
+        <SectionImage.List>
+          <SectionImage.Item alt="" src={ibcxImage} placeholder="blur" />
+        </SectionImage.List>
       </Section>
       <Section id="bento">
         <SectionTitle>Bento</SectionTitle>
         <p>
           <strong>Founder ~</strong>
         </p>
-        <ImageList>
-          <Image alt="" src={bentoImage1} placeholder="blur" />
-          <Image alt="" src={bentoImage2} placeholder="blur" />
-        </ImageList>
+        <SectionImage.List>
+          <SectionImage.Item alt="" src={bentoImage1} placeholder="blur" />
+          <SectionImage.Item alt="" src={bentoImage2} placeholder="blur" />
+        </SectionImage.List>
         <p>
           I made various dashboard apps for some protocols/wallets part-time and
           was soon disappointed that they were moving cringely outside their
@@ -177,9 +177,9 @@ const IndexPage = () => {
       </Section>
       <Section id="zep-studio">
         <SectionTitle>ZEP Studio</SectionTitle>
-        <ImageList>
-          <Image alt="" src={zepStudioImage} placeholder="blur" />
-        </ImageList>
+        <SectionImage.List>
+          <SectionImage.Item alt="" src={zepStudioImage} placeholder="blur" />
+        </SectionImage.List>
 
         <p>A Block Coding Editor for ZEP Script-based Apps</p>
 
@@ -194,13 +194,13 @@ const IndexPage = () => {
           Worked on various NFT projects and frontends. Developed crafting
           solution to function customizable NFTs on Immutable X.
         </p>
-        <ImageList>
-          <Image alt="" src={manythingsImage} placeholder="blur" />
-          <Image alt="" src={altiImage1} placeholder="blur" />
-          <Image alt="" src={altiImage2} placeholder="blur" />
-          <Image alt="" src={cybergalzImage1} placeholder="blur" />
-          <Image alt="" src={cybergalzImage2} placeholder="blur" />
-        </ImageList>
+        <SectionImage.List>
+          <SectionImage.Item alt="" src={manythingsImage} placeholder="blur" />
+          <SectionImage.Item alt="" src={altiImage1} placeholder="blur" />
+          <SectionImage.Item alt="" src={altiImage2} placeholder="blur" />
+          <SectionImage.Item alt="" src={cybergalzImage1} placeholder="blur" />
+          <SectionImage.Item alt="" src={cybergalzImage2} placeholder="blur" />
+        </SectionImage.List>
         <Section id="keplr">
           <SectionTitle>Keplr</SectionTitle>
           <p>
@@ -238,9 +238,9 @@ const IndexPage = () => {
               </a>
             </li>
           </ul>
-          <ImageList>
-            <Image alt="" src={keplrImage1} placeholder="blur" />
-          </ImageList>
+          <SectionImage.List>
+            <SectionImage.Item alt="" src={keplrImage1} placeholder="blur" />
+          </SectionImage.List>
         </Section>
       </Section>
       <Section id="defi">
@@ -266,12 +266,12 @@ const IndexPage = () => {
           Simplicity 21(an internal design conference). Also maintained web
           products such as Toss Feed 3.0, Home, and Notice.
         </p>
-        <ImageList>
-          <Image alt="" src={tossImage1} placeholder="blur" />
-          <Image alt="" src={tossImage2} placeholder="blur" />
-          <Image alt="" src={tossImage3} placeholder="blur" />
-          <Image alt="" src={tossImage4} placeholder="blur" />
-        </ImageList>
+        <SectionImage.List>
+          <SectionImage.Item alt="" src={tossImage1} placeholder="blur" />
+          <SectionImage.Item alt="" src={tossImage2} placeholder="blur" />
+          <SectionImage.Item alt="" src={tossImage3} placeholder="blur" />
+          <SectionImage.Item alt="" src={tossImage4} placeholder="blur" />
+        </SectionImage.List>
       </Section>
       <Section id="pocketlesson">
         <SectionTitle>PocketLesson</SectionTitle>
@@ -308,10 +308,18 @@ const IndexPage = () => {
             check-mergeable
           </a>
         </p>
-        <ImageList>
-          <Image alt="" src={pocketlessonImage1} placeholder="blur" />
-          <Image alt="" src={pocketlessonImage2} placeholder="blur" />
-        </ImageList>
+        <SectionImage.List>
+          <SectionImage.Item
+            alt=""
+            src={pocketlessonImage1}
+            placeholder="blur"
+          />
+          <SectionImage.Item
+            alt=""
+            src={pocketlessonImage2}
+            placeholder="blur"
+          />
+        </SectionImage.List>
       </Section>
       <Section id="github">
         <SectionTitle>GitHub</SectionTitle>
@@ -349,52 +357,17 @@ const IndexPage = () => {
 
         <div style={{ marginBottom: 32 }}>
           <Link href="/oss">
-            <Button>OSS</Button>
+            <PrimaryButton>OSS</PrimaryButton>
           </Link>
         </div>
 
-        <ImageList>
-          <Image alt="" src={githubImage2} placeholder="blur" />
-          <Image alt="" src={githubImage1} placeholder="blur" />
-        </ImageList>
+        <SectionImage.List>
+          <SectionImage.Item alt="" src={githubImage2} placeholder="blur" />
+          <SectionImage.Item alt="" src={githubImage1} placeholder="blur" />
+        </SectionImage.List>
       </Section>
     </Layout>
   );
 };
 
 export default IndexPage;
-
-const Tip = styled.h3`
-  color: #d1e9ff;
-  background-color: #d1e9ff;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
-  font-size: 28px;
-`;
-
-const Section = styled(TrackedSection)`
-  padding-top: 16px;
-`;
-const SectionTitle = styled.h2`
-  padding-top: 8px;
-  margin: 0;
-  margin-bottom: 16px;
-  font-weight: 900;
-`;
-
-const ImageList = styled.div`
-  margin-bottom: 16px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-
-  & > img {
-    width: 100%;
-    height: auto;
-    border-radius: 6px;
-    ${shadow('to-bottom')}
-  }
-`;

@@ -1,5 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
+
+import { DivComponent } from '@/types/html';
 
 import Device from './Device';
 
@@ -22,7 +23,12 @@ const Phone: React.FC<PhoneProps> = ({ transformScale }) => {
 
 export default Phone;
 
-const Wrapper = styled.div`
-  display: flex;
-  justify-content: center;
-`;
+const Wrapper: DivComponent = ({ style, ...props }) => (
+  <div
+    {...props}
+    style={{
+      display: 'flex',
+      justifyContent: 'center',
+    }}
+  />
+);

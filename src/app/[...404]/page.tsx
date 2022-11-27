@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 
-import Button from '@/components/Button';
+import { PrimaryButton } from '@/components/Button';
 import Layout from '@/components/Layout';
 
 const NotFoundPage = () => (
@@ -16,7 +16,7 @@ const NotFoundPage = () => (
     }
   >
     <Link href="/">
-      <Button>Go back to Home</Button>
+      <PrimaryButton>Go back to Home</PrimaryButton>
     </Link>
   </Layout>
 );
