@@ -1317,6 +1317,11 @@
   resolved "https://registry.yarnpkg.com/@trysound/sax/-/sax-0.2.0.tgz#cccaab758af56761eb7bf37af6f03f326dd798ad"
   integrity sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==
 
+"@types/amplitude-js@^8.16.2":
+  version "8.16.2"
+  resolved "https://registry.yarnpkg.com/@types/amplitude-js/-/amplitude-js-8.16.2.tgz#2cfb850a01a4171e632498821f92e45bef23c952"
+  integrity sha512-a+tb/CEQOlrHRvEvAuYNOcoUy1POERANnAhfKgiTmsy0eACj3eukGP0ucA9t115QOPzVUhbnUfZqtyHp99IZyA==
+
 "@types/dedent@^0.7.0":
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/@types/dedent/-/dedent-0.7.0.tgz#155f339ca404e6dd90b9ce46a3f78fd69ca9b050"
