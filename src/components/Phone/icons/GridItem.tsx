@@ -1,4 +1,4 @@
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import React from 'react';
 
 import { Analytics } from '@/utils/analytics';
@@ -25,6 +25,7 @@ const GridItem: React.FC<GridItemProps> = ({
   href,
 }) => {
   const router = useRouter();
+  const pathname = usePathname();
 
   if (component) {
     return <>{component}</>;
@@ -37,9 +38,13 @@ const GridItem: React.FC<GridItemProps> = ({
         Analytics.logEvent('click_icon', { name: name ?? 'Unknown' });
         if (!!href) {
           if (href.startsWith('#')) {
-            document.querySelector(href)?.scrollIntoView({
-              behavior: 'smooth',
-            });
+            if (pathname === '/') {
+              document.querySelector(href)?.scrollIntoView({
+                behavior: 'smooth',
+              });
+            } else {
+              router.push(`/${href}`);
+            }
           } else {
             router.push(href);
           }

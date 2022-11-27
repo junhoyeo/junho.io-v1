@@ -35,6 +35,14 @@ const IndexPage = () => {
     Analytics.logEvent('view_landing', undefined);
   }, []);
 
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      const id = hash.replace('#', '');
+      document.getElementById(id)?.scrollIntoView();
+    }
+  }, []);
+
   return (
     <Layout
       title={
