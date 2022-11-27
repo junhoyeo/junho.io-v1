@@ -36,7 +36,11 @@ async function getAmplitude() {
   return undefined;
 }
 
+let initialized = false;
 async function initialize() {
+  if (initialized) {
+    return;
+  }
   const amplitude = await getAmplitude();
   amplitude?.init(AMPLITUDE_API_KEY);
   const ENVIRONMENT = getEnvironment();
@@ -49,6 +53,9 @@ async function logEvent<TName extends keyof AnalyticsEvent>(
   name: TName,
   properties: AnalyticsEvent[TName],
 ) {
+  if (!initialized) {
+    await initialize();
+  }
   const eventProperties = {
     referrer: document.referrer || undefined,
     ...(properties as unknown as object),
