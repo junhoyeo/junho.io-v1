@@ -1,6 +1,5 @@
 import React, { useCallback, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
-import styled from 'styled-components';
 
 import { Analytics } from '../utils/analytics';
 
@@ -9,12 +8,15 @@ type RefForwardedSectionProps = React.HTMLAttributes<HTMLElement> & {
 };
 const RefForwardedSection: React.FC<RefForwardedSectionProps> = ({
   forwardedRef,
+  style,
   ...props
-}) => <RelativeSection ref={forwardedRef} {...props} />;
-
-export const RelativeSection = styled.section`
-  position: relative;
-`;
+}) => (
+  <section
+    ref={forwardedRef}
+    style={{ position: 'relative', ...style }}
+    {...props}
+  />
+);
 
 export type TrackedSectionProps = React.HTMLAttributes<HTMLElement> & {
   id: string;

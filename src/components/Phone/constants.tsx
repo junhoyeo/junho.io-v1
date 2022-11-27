@@ -1,9 +1,9 @@
-import { IGridItem } from './icons/GridItem';
+import { GridItemProps } from './icons/GridItem';
 
 export const DEVICE_WIDTH = 428;
 export const DEVICE_HEIGHT = 868;
 
-export const INSTALLED_APPS: IGridItem[] = [
+export const INSTALLED_APPS: GridItemProps[] = [
   {
     name: '$IBCX',
     icon: '/assets/phone/icons/ibcx.jpeg',

@@ -1,0 +1,29 @@
+.btn {
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1;
+
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.15s ease;
+}
+
+.btnPrimary {
+  background-color: #148cff;
+  color: #fff;
+
+  &:hover {
+    background-color: #0779e4;
+    color: rgba(255, 255, 255, 0.85);
+  }
+}
+
+.btnSecondary {
+  background-color: #d1e9ff;
+  color: #0078eb;
+
+  &:hover {
+    background-color: #abc5de;
+    color: rgba(0, 120, 235, 0.85);
+  }
+}

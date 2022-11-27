@@ -1,9 +1,8 @@
 import Link from 'next/link';
 import React from 'react';
 
-import Button from '../components/Button';
-import Layout from '../components/Layout';
-import MetaHead from '../components/MetaHead';
+import { PrimaryButton } from '@/components/Button';
+import Layout from '@/components/Layout';
 
 const NotFoundPage = () => (
   <Layout
@@ -16,9 +15,8 @@ const NotFoundPage = () => (
       </>
     }
   >
-    <MetaHead title="404: Not Found" />
     <Link href="/">
-      <Button>Go back to Home</Button>
+      <PrimaryButton>Go back to Home</PrimaryButton>
     </Link>
   </Layout>
 );

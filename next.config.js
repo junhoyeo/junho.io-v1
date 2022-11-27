@@ -4,8 +4,8 @@ const { withPlugins } = require('next-composed-plugins');
 module.exports = withPlugins(
   {
     reactStrictMode: true,
-    compiler: {
-      styledComponents: true,
+    experimental: {
+      appDir: true,
     },
   },
   [withSvgr],
