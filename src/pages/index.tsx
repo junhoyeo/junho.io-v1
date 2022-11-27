@@ -20,7 +20,7 @@ import tossImage1 from '../assets/toss-1.png';
 import tossImage2 from '../assets/toss-2.png';
 import tossImage3 from '../assets/toss-3.png';
 import tossImage4 from '../assets/toss-4.png';
-// import zepStudioImage from '../assets/zep-studio.png';
+import zepStudioImage from '../assets/zep-studio.png';
 import Button, { SecondaryButton } from '../components/Button';
 import Layout from '../components/Layout';
 import MetaHead from '../components/MetaHead';
@@ -176,10 +176,9 @@ const IndexPage = () => {
       </Section>
       <Section id="zep-studio">
         <SectionTitle>ZEP Studio</SectionTitle>
-        {/* <ImageList>
+        <ImageList>
           <Image alt="" src={zepStudioImage} placeholder="blur" />
-        </ImageList> */}
-        <p>TBD</p>
+        </ImageList>
 
         <p>A Block Coding Editor for ZEP Script-based Apps</p>
 
