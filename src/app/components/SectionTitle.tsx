@@ -8,6 +8,7 @@ export const SectionTitle: HeadingComponent = ({ style, ...props }) => (
       margin: 0,
       marginBottom: 16,
       fontWeight: 900,
+      fontSize: 28,
       ...style,
     }}
   />

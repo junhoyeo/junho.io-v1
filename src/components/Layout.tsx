@@ -4,7 +4,6 @@ import Link from 'next/link';
 import React, { useEffect, useRef, useState } from 'react';
 
 import Phone from '../components/Phone';
-import { rhythm } from '../utils/typography';
 import useWindowSize from '../utils/useWindowSize';
 import { DEVICE_HEIGHT, DEVICE_WIDTH } from './Phone/constants';
 import classes from './layout.module.scss';
@@ -48,7 +47,7 @@ const Layout: React.FC<LayoutProps> = ({ title, description, children }) => {
         <div className={classes.container}>
           <div
             className={classes.brandWrapper}
-            style={{ marginTop: rhythm(1.8), marginBottom: rhythm(1) }}
+            style={{ marginTop: 54, marginBottom: 28 }}
           >
             <Link href="/">
               <span className={classes.brand}>junho.io</span>
@@ -56,10 +55,7 @@ const Layout: React.FC<LayoutProps> = ({ title, description, children }) => {
           </div>
           {title && <h1 className={classes.title}>{title}</h1>}
           {description && (
-            <p
-              className={classes.description}
-              style={{ paddingBottom: rhythm(0.5) }}
-            >
+            <p className={classes.description} style={{ paddingBottom: 16 }}>
               {description}
             </p>
           )}
