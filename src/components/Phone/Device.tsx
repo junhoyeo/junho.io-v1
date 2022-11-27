@@ -205,24 +205,24 @@ const Device: React.FC<IDevice> = ({ style }) => {
           overflow: hidden;
           height: ${DEVICE_HEIGHT * 0.11}px;
           padding: ${0.045 * DEVICE_WIDTH}px ${0.047 * DEVICE_WIDTH}px;
-          background-image: url('/assets/phone/background.png');
+          background-image: url('/assets/phone/background.jpg');
+        }
 
-          &::before {
-            content: '';
-            position: absolute;
-            background: inherit;
-            z-index: -1;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.5);
-            filter: blur(24px);
-            margin: -20px;
-            background-size: cover;
-            opacity: 0.5;
-            background-position-y: bottom;
-          }
+        .bottom-container::before {
+          content: '';
+          position: absolute;
+          background: inherit;
+          z-index: -1;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.5);
+          filter: blur(24px);
+          margin: -20px;
+          background-size: cover;
+          opacity: 0.5;
+          background-position-y: bottom;
         }
 
         .clock {
