@@ -7,12 +7,15 @@ export const Tip: HeadingComponent = ({ style, ...props }) => (
   <h3
     {...props}
     style={{
+      marginBottom: 28,
       color: secondaryColor,
       backgroundColor: secondaryColor,
       backgroundClip: 'text',
       WebkitBackgroundClip: 'text',
       WebkitTextFillColor: 'transparent',
-      fontSize: '28px',
+      fontWeight: 700,
+      fontSize: 28,
+      lineHeight: 1.25,
       ...style,
     }}
   />

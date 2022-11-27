@@ -37,8 +37,12 @@
   }
 
   .title {
-    font-size: 2.5rem;
+    margin-bottom: 28px;
+
+    font-weight: bold;
+    font-size: 2.8rem;
     line-height: 1.25;
+    letter-spacing: -0.25px;
 
     @media screen and (max-width: 330px) {
       font-size: 2rem;
@@ -46,11 +50,21 @@
   }
 
   .description {
+    margin-bottom: 28px;
+
     font-weight: 400;
-    font-size: 1.25rem;
+    font-size: 1.4rem;
     color: #707176;
-    padding-bottom: 0.5rem;
+    padding-bottom: 0.56rem;
     line-height: 1.45;
+  }
+
+  main p {
+    margin-bottom: 28px;
+
+    font-size: 18px;
+    line-height: 1.65;
+    color: rgba(247, 247, 247, 1);
   }
 }
 
@@ -62,7 +76,7 @@
 .brand {
   font-weight: 900;
   font-family: 'Montserrat', sans-serif;
-  font-size: 2rem;
+  font-size: 2.25rem;
   color: #707176;
   cursor: pointer;
   width: fit-content;

@@ -1,5 +1,8 @@
 import createGlobe from 'cobe';
-import React, { useEffect, useMemo, useRef } from 'react';
+import DynamicIsland from 'dynamic-island/src/DynamicIsland';
+import { DynamicIslandPhoneCall } from 'dynamic-island/src/PhoneCall';
+import { DynamicIslandSize } from 'dynamic-island/types';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 
 import { shadow } from '@/styles/shadow';
 
@@ -26,6 +29,8 @@ const Device: React.FC<IDevice> = ({ style }) => {
       .toString()
       .padStart(2, '0')}`;
   }, []);
+
+  const [callState, setCallState] = useState<DynamicIslandSize>('default');
 
   const deviceFrameRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -79,6 +84,12 @@ const Device: React.FC<IDevice> = ({ style }) => {
     };
   }, []);
 
+  useEffect(() => {
+    setTimeout(() => {
+      setCallState(callState === 'default' ? 'large' : 'default');
+    }, 3_000);
+  }, []);
+
   return (
     <>
       <div className="phone device device-iphone-14-pro" style={style}>
@@ -86,6 +97,23 @@ const Device: React.FC<IDevice> = ({ style }) => {
           <div className="screen device-screen">
             <div className="top-container">
               <span className="clock">{currentTime}</span>
+
+              <div className="dynamic-island-container absolute h-[35px] top-0 left-0 right-0 w-full flex items-center">
+                <DynamicIsland
+                  id="phone-call"
+                  default="default"
+                  state={callState}
+                  setState={setCallState}
+                  onClick={
+                    callState === 'default'
+                      ? () => setCallState('large')
+                      : () => setCallState('default')
+                  }
+                >
+                  <DynamicIslandPhoneCall size={callState} />
+                </DynamicIsland>
+              </div>
+
               <Symbols style={{ marginRight: -APP_CELL_GAP / 4 }} />
             </div>
             <div className="grid-wrapper">
@@ -109,7 +137,6 @@ const Device: React.FC<IDevice> = ({ style }) => {
           </div>
         </div>
         <div className="device-stripe"></div>
-        <div className="device-header"></div>
         <div className="device-sensors"></div>
         <div className="device-btns"></div>
         <div className="device-power"></div>
@@ -159,6 +186,11 @@ const Device: React.FC<IDevice> = ({ style }) => {
           top: 9px;
           left: 5%;
           right: 5%;
+        }
+
+        .device-iphone-14-pro .device-sensors::before,
+        .device-iphone-14-pro .device-sensors::after {
+          pointer-events: none;
         }
 
         .grid-wrapper {
