@@ -8,12 +8,12 @@ const Symbols: DivComponent = (props) => {
   return (
     <div className={classes.wrapper} {...props}>
       <div className={classes.container}>
-        <ul className={classes.cellularList}>
-          <li className={`${classes.cellularItem} ${classes.cellularOne}`} />
-          <li className={`${classes.cellularItem} ${classes.cellularTwo}`} />
-          <li className={`${classes.cellularItem} ${classes.cellularThree}`} />
-          <li className={`${classes.cellularItem} ${classes.cellularFour}`} />
-        </ul>
+        <div className={classes.cellularList}>
+          <div className={`${classes.cellularItem} ${classes.cellularOne}`} />
+          <div className={`${classes.cellularItem} ${classes.cellularTwo}`} />
+          <div className={`${classes.cellularItem} ${classes.cellularThree}`} />
+          <div className={`${classes.cellularItem} ${classes.cellularFour}`} />
+        </div>
 
         <div className={classes.wifiWrapper}>
           <div className={classes.wifi}>
@@ -24,7 +24,7 @@ const Symbols: DivComponent = (props) => {
         </div>
 
         <div className={classes.batteryWrapper}>
-          <div className={classes.battery}>
+          <div className={classes.batteryContainer}>
             <div className={classes.battery} />
           </div>
           <div className={classes.batteryElectrode} />
