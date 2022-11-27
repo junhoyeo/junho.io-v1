@@ -117,6 +117,7 @@ const Device: React.FC<IDevice> = ({ style }) => {
       <style jsx>{`
         .phone {
           border-radius: 68px;
+          transition: all 0.2s ease;
 
           box-shadow: ${shadow('to-top')};
         }
