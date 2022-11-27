@@ -19,10 +19,6 @@ const Layout: React.FC<LayoutProps> = ({ title, description, children }) => {
   const [transformScale, setTransformScale] = useState<number>(1);
 
   useEffect(() => {
-    typography.injectStyles();
-  }, []);
-
-  useEffect(() => {
     if (screenWidth > 500) {
       setTransformScale(1);
       return;
