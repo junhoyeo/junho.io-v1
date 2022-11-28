@@ -122,7 +122,7 @@ const IndexPage = () => {
         <p>
           More details at:{' '}
           <a
-            href="https://ion.wtf"
+            href="https://index.ion.wtf"
             target="_blank"
             style={{ color: '#87d6ff', textDecoration: 'underline' }}
             onClick={() =>
