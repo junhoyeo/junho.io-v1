@@ -5,6 +5,7 @@ import React, { useEffect, useRef, useState } from 'react';
 
 import Phone from '../components/Phone';
 import useWindowSize from '../utils/useWindowSize';
+import { Gradient } from './Gradient';
 import { DEVICE_HEIGHT, DEVICE_WIDTH } from './Phone/constants';
 import classes from './layout.module.scss';
 
@@ -43,6 +44,7 @@ const Layout: React.FC<LayoutProps> = ({ title, description, children }) => {
 
   return (
     <>
+      <Gradient />
       <div className={classes.wrapper}>
         <div className={classes.container}>
           <div
