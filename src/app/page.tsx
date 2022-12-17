@@ -215,8 +215,8 @@ const IndexPage = () => {
             Contributed to Keplr Wallet and the early version of it's web
             dashboard.
           </p>
-          <ul>
-            <li>
+          <ul style={{ paddingLeft: 16 }}>
+            <li style={{ listStyleType: 'disc' }}>
               <a
                 href="https://github.com/chainapsis/keplr-wallet/pull/369"
                 target="_blank"
@@ -230,7 +230,7 @@ const IndexPage = () => {
                 Normalize font-family of mnemonic input placeholder #369
               </a>
             </li>
-            <li>
+            <li style={{ listStyleType: 'disc' }}>
               <a
                 href="https://github.com/chainapsis/keplr-wallet/pull/388"
                 target="_blank"
@@ -246,6 +246,7 @@ const IndexPage = () => {
               </a>
             </li>
           </ul>
+          <br />
           <SectionImage.List>
             <SectionImage.Item alt="" src={keplrImage1} placeholder="blur" />
           </SectionImage.List>
