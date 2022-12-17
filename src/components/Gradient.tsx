@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-const GRADIENT_URL = `https://gradientgen.vercel.app/?colors=06B7DB,1F0A33,1F0A33,7828C8`;
+const GRADIENT_URL = `https://gradientgen.vercel.app/?colors=16181A,000,000,9BA1A6`;
 
 export const Gradient: React.FC = () => {
   return (
@@ -38,8 +38,7 @@ export const Gradient: React.FC = () => {
           left: 0;
           right: 0;
           bottom: 0;
-
-          background: rgba(0, 0, 0, 0.45);
+          background-color: rgba(0, 0, 0, 0.85);
         }
       `}</style>
     </>
