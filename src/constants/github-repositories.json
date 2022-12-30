@@ -271,6 +271,21 @@
   },
   {
     "archived": false,
+    "created_at": "2022-11-30T07:35:35Z",
+    "description": null,
+    "fork": true,
+    "forks_count": 0,
+    "homepage": null,
+    "html_url": "https://github.com/junhoyeo/axelarjs-sdk",
+    "language": null,
+    "name": "axelarjs-sdk",
+    "open_issues": 0,
+    "stargazers_count": 0,
+    "updated_at": "2022-11-22T00:09:47Z",
+    "watchers_count": 0
+  },
+  {
+    "archived": false,
     "created_at": "2020-01-13T09:46:27Z",
     "description": "바닐라 JS로 하는 배민문방구 클론 코딩 ",
     "fork": false,
@@ -351,13 +366,28 @@
     "fork": false,
     "forks_count": 1,
     "homepage": "https://junhoyeo.github.io/blog/",
-    "html_url": "https://github.com/junhoyeo/blog-old",
+    "html_url": "https://github.com/junhoyeo/blog-v1",
     "language": "CSS",
-    "name": "blog-old",
+    "name": "blog-v1",
     "open_issues": 3,
     "stargazers_count": 2,
-    "updated_at": "2019-11-30T04:48:07Z",
+    "updated_at": "2022-12-30T13:51:53Z",
     "watchers_count": 2
+  },
+  {
+    "archived": true,
+    "created_at": "2019-11-23T19:22:47Z",
+    "description": null,
+    "fork": false,
+    "forks_count": 1,
+    "homepage": "https://junhoyeo.github.io",
+    "html_url": "https://github.com/junhoyeo/blog-v2",
+    "language": "TypeScript",
+    "name": "blog-v2",
+    "open_issues": 0,
+    "stargazers_count": 4,
+    "updated_at": "2022-12-30T13:52:39Z",
+    "watchers_count": 4
   },
   {
     "archived": false,
@@ -609,7 +639,7 @@
     "html_url": "https://github.com/junhoyeo/citation",
     "language": "TypeScript",
     "name": "citation",
-    "open_issues": 9,
+    "open_issues": 11,
     "stargazers_count": 10,
     "updated_at": "2021-05-28T21:07:01Z",
     "watchers_count": 10
@@ -999,7 +1029,7 @@
     "html_url": "https://github.com/junhoyeo/deliveries",
     "language": "TypeScript",
     "name": "deliveries",
-    "open_issues": 17,
+    "open_issues": 20,
     "stargazers_count": 42,
     "updated_at": "2022-05-01T07:29:38Z",
     "watchers_count": 42
@@ -1030,9 +1060,9 @@
     "language": "TypeScript",
     "name": "detect-airpods",
     "open_issues": 0,
-    "stargazers_count": 56,
-    "updated_at": "2022-11-06T20:25:41Z",
-    "watchers_count": 56
+    "stargazers_count": 57,
+    "updated_at": "2022-11-29T13:54:29Z",
+    "watchers_count": 57
   },
   {
     "archived": false,
@@ -1216,6 +1246,21 @@
   },
   {
     "archived": false,
+    "created_at": "2022-11-27T16:17:38Z",
+    "description": "Fork of dynamic-island.cho.sh used in https://github.com/junhoyeo/junho-io",
+    "fork": true,
+    "forks_count": 0,
+    "homepage": "https://dynamic-island.cho.sh",
+    "html_url": "https://github.com/junhoyeo/dynamic-island",
+    "language": "TypeScript",
+    "name": "dynamic-island",
+    "open_issues": 0,
+    "stargazers_count": 0,
+    "updated_at": "2022-11-27T19:18:45Z",
+    "watchers_count": 0
+  },
+  {
+    "archived": false,
     "created_at": "2021-01-17T09:38:15Z",
     "description": "Dynamoose is a modeling tool for Amazon's DynamoDB",
     "fork": true,
@@ -1270,9 +1315,9 @@
     "language": "PHP",
     "name": "Eunyeoul-Chatbot-PHP",
     "open_issues": 0,
-    "stargazers_count": 14,
-    "updated_at": "2021-12-30T01:46:18Z",
-    "watchers_count": 14
+    "stargazers_count": 13,
+    "updated_at": "2022-12-07T14:26:37Z",
+    "watchers_count": 13
   },
   {
     "archived": false,
@@ -1584,7 +1629,7 @@
     "html_url": "https://github.com/junhoyeo/github-rank-in-dimigo",
     "language": "TypeScript",
     "name": "github-rank-in-dimigo",
-    "open_issues": 11,
+    "open_issues": 12,
     "stargazers_count": 32,
     "updated_at": "2022-11-07T00:25:51Z",
     "watchers_count": 32
@@ -1599,7 +1644,7 @@
     "html_url": "https://github.com/junhoyeo/github-streak-competition",
     "language": "TypeScript",
     "name": "github-streak-competition",
-    "open_issues": 12,
+    "open_issues": 14,
     "stargazers_count": 8,
     "updated_at": "2020-10-20T06:20:40Z",
     "watchers_count": 8
@@ -1759,15 +1804,15 @@
     "created_at": "2020-05-13T11:10:15Z",
     "description": "💳✨📘 TypeScript type definitions for Iamport / 국내 PG 결제연동 서비스, 아임포트를 위한 타입스크립트 타입 선언을 제공합니다. ",
     "fork": false,
-    "forks_count": 2,
+    "forks_count": 4,
     "homepage": "",
     "html_url": "https://github.com/junhoyeo/iamport-typings",
     "language": "TypeScript",
     "name": "iamport-typings",
-    "open_issues": 0,
-    "stargazers_count": 19,
-    "updated_at": "2022-08-09T09:21:05Z",
-    "watchers_count": 19
+    "open_issues": 1,
+    "stargazers_count": 21,
+    "updated_at": "2022-12-06T01:52:18Z",
+    "watchers_count": 21
   },
   {
     "archived": false,
@@ -1891,6 +1936,21 @@
   },
   {
     "archived": false,
+    "created_at": "2022-12-17T15:24:36Z",
+    "description": "🏝️ iPhone 14 Pro with dynamic island, on the web.",
+    "fork": false,
+    "forks_count": 0,
+    "homepage": "http://iphone.junho.io",
+    "html_url": "https://github.com/junhoyeo/iphone",
+    "language": "TypeScript",
+    "name": "iphone",
+    "open_issues": 0,
+    "stargazers_count": 28,
+    "updated_at": "2022-12-21T16:29:54Z",
+    "watchers_count": 28
+  },
+  {
+    "archived": false,
     "created_at": "2021-08-10T17:24:34Z",
     "description": "🏡 JBEE.io: Powered by `gatsby-starter-bee`. Source of",
     "fork": true,
@@ -1997,17 +2057,17 @@
   {
     "archived": false,
     "created_at": "2020-11-23T05:38:34Z",
-    "description": "website",
+    "description": "🏴‍☠️ website (i14 pro, crafted, 🏝️)",
     "fork": false,
-    "forks_count": 0,
+    "forks_count": 1,
     "homepage": "https://junho.io",
     "html_url": "https://github.com/junhoyeo/junho.io",
     "language": "TypeScript",
     "name": "junho.io",
-    "open_issues": 1,
-    "stargazers_count": 12,
-    "updated_at": "2022-10-22T10:04:51Z",
-    "watchers_count": 12
+    "open_issues": 0,
+    "stargazers_count": 22,
+    "updated_at": "2022-12-18T16:47:19Z",
+    "watchers_count": 22
   },
   {
     "archived": false,
@@ -2094,7 +2154,7 @@
     "html_url": "https://github.com/junhoyeo/kartrider-stats",
     "language": "JavaScript",
     "name": "kartrider-stats",
-    "open_issues": 3,
+    "open_issues": 4,
     "stargazers_count": 1,
     "updated_at": "2020-07-20T12:48:09Z",
     "watchers_count": 1
@@ -2131,17 +2191,17 @@
   },
   {
     "archived": false,
-    "created_at": "2022-11-24T22:04:22Z",
+    "created_at": "2022-11-26T18:07:57Z",
     "description": "국내 IT 기업 소프트웨어 개발 문화 - 본 레포지터리는 국내 IT 기업의 소프트웨어 개발 문화에 대한 다양한 자료를 정리하고 있습니다.",
     "fork": true,
     "forks_count": 0,
     "homepage": "",
     "html_url": "https://github.com/junhoyeo/korea-devculture",
-    "language": "Python",
+    "language": null,
     "name": "korea-devculture",
     "open_issues": 0,
     "stargazers_count": 0,
-    "updated_at": "2022-11-24T23:19:51Z",
+    "updated_at": "2022-11-26T17:55:44Z",
     "watchers_count": 0
   },
   {
@@ -2550,21 +2610,6 @@
     "watchers_count": 1
   },
   {
-    "archived": true,
-    "created_at": "2019-11-23T19:22:47Z",
-    "description": null,
-    "fork": false,
-    "forks_count": 1,
-    "homepage": "https://junhoyeo.github.io",
-    "html_url": "https://github.com/junhoyeo/old-blog",
-    "language": "TypeScript",
-    "name": "old-blog",
-    "open_issues": 0,
-    "stargazers_count": 4,
-    "updated_at": "2020-11-21T18:22:09Z",
-    "watchers_count": 4
-  },
-  {
     "archived": false,
     "created_at": "2022-02-08T12:31:56Z",
     "description": "👾 Discord links with Metadata",
@@ -2629,14 +2674,14 @@
     "created_at": "2022-10-20T06:14:52Z",
     "description": "🪄 Worldbuilder",
     "fork": false,
-    "forks_count": 0,
+    "forks_count": 1,
     "homepage": "https://paracosm.sh",
     "html_url": "https://github.com/junhoyeo/paracosm",
     "language": "TypeScript",
     "name": "paracosm",
     "open_issues": 0,
     "stargazers_count": 4,
-    "updated_at": "2022-11-03T12:15:33Z",
+    "updated_at": "2022-12-15T00:54:24Z",
     "watchers_count": 4
   },
   {
@@ -2731,6 +2776,21 @@
   },
   {
     "archived": false,
+    "created_at": "2022-11-27T07:51:26Z",
+    "description": "Plugins for swc, written in rust",
+    "fork": true,
+    "forks_count": 0,
+    "homepage": null,
+    "html_url": "https://github.com/junhoyeo/plugins",
+    "language": null,
+    "name": "plugins",
+    "open_issues": 0,
+    "stargazers_count": 0,
+    "updated_at": "2022-11-27T07:51:13Z",
+    "watchers_count": 0
+  },
+  {
+    "archived": false,
     "created_at": "2022-01-30T06:10:07Z",
     "description": "🌊 PoC for polling sale events from OpenSea",
     "fork": false,
@@ -2761,6 +2821,21 @@
   },
   {
     "archived": false,
+    "created_at": "2022-12-05T07:08:23Z",
+    "description": "어느 플랫폼에서든 사용할 수 있는 system-ui 대체 글꼴 | A system-ui alternative font for all cross-platform",
+    "fork": true,
+    "forks_count": 0,
+    "homepage": "https://cactus.tistory.com/306",
+    "html_url": "https://github.com/junhoyeo/pretendard",
+    "language": null,
+    "name": "pretendard",
+    "open_issues": 0,
+    "stargazers_count": 0,
+    "updated_at": "2022-12-05T06:35:42Z",
+    "watchers_count": 0
+  },
+  {
+    "archived": false,
     "created_at": "2021-07-16T03:52:07Z",
     "description": "💸💖 자부심은 스스로 만들어나가는 것입니다.",
     "fork": false,
@@ -2773,6 +2848,21 @@
     "stargazers_count": 19,
     "updated_at": "2021-10-08T01:03:37Z",
     "watchers_count": 19
+  },
+  {
+    "archived": false,
+    "created_at": "2022-12-14T09:17:47Z",
+    "description": "🖌️ Renders highlighted Prism output to React (+ theming & vendored Prism)",
+    "fork": true,
+    "forks_count": 0,
+    "homepage": "",
+    "html_url": "https://github.com/junhoyeo/prism-react-renderer",
+    "language": null,
+    "name": "prism-react-renderer",
+    "open_issues": 0,
+    "stargazers_count": 0,
+    "updated_at": "2022-12-13T01:49:27Z",
+    "watchers_count": 0
   },
   {
     "archived": true,
@@ -2949,10 +3039,10 @@
     "html_url": "https://github.com/junhoyeo/react-native-bubble-tabbar",
     "language": "TypeScript",
     "name": "react-native-bubble-tabbar",
-    "open_issues": 12,
-    "stargazers_count": 43,
-    "updated_at": "2022-03-29T14:47:47Z",
-    "watchers_count": 43
+    "open_issues": 13,
+    "stargazers_count": 44,
+    "updated_at": "2022-12-15T11:57:00Z",
+    "watchers_count": 44
   },
   {
     "archived": false,
@@ -3610,9 +3700,9 @@
     "language": null,
     "name": "standard-is",
     "open_issues": 0,
-    "stargazers_count": 14,
-    "updated_at": "2022-11-24T12:22:41Z",
-    "watchers_count": 14
+    "stargazers_count": 16,
+    "updated_at": "2022-12-19T18:40:12Z",
+    "watchers_count": 16
   },
   {
     "archived": false,
@@ -3909,7 +3999,7 @@
     "html_url": "https://github.com/junhoyeo/trendy-resume",
     "language": "TypeScript",
     "name": "trendy-resume",
-    "open_issues": 3,
+    "open_issues": 4,
     "stargazers_count": 64,
     "updated_at": "2022-10-28T04:50:39Z",
     "watchers_count": 64
@@ -4089,7 +4179,7 @@
     "html_url": "https://github.com/junhoyeo/vercel",
     "language": "TypeScript",
     "name": "vercel",
-    "open_issues": 8,
+    "open_issues": 12,
     "stargazers_count": 0,
     "updated_at": "2022-09-13T10:44:46Z",
     "watchers_count": 0
@@ -4099,15 +4189,15 @@
     "created_at": "2022-09-13T10:48:33Z",
     "description": "🍣 CLI to handle Private Git Submodules in your @Vercel Project",
     "fork": false,
-    "forks_count": 1,
+    "forks_count": 2,
     "homepage": "",
     "html_url": "https://github.com/junhoyeo/vercel-submodules",
     "language": "TypeScript",
     "name": "vercel-submodules",
     "open_issues": 0,
-    "stargazers_count": 32,
-    "updated_at": "2022-10-28T17:04:37Z",
-    "watchers_count": 32
+    "stargazers_count": 36,
+    "updated_at": "2022-12-22T13:16:35Z",
+    "watchers_count": 36
   },
   {
     "archived": true,
@@ -4279,7 +4369,7 @@
     "created_at": "2021-01-02T09:23:24Z",
     "description": "Python Proof of Concept for retrieving Now Playing on YouTube Music with TabFS",
     "fork": false,
-    "forks_count": 0,
+    "forks_count": 1,
     "homepage": "",
     "html_url": "https://github.com/junhoyeo/youtube-music-tabfs",
     "language": "Python",
