@@ -28,7 +28,6 @@ export const INSTALLED_APPS: GridItemProps[] = [
     color: '#FFFB00',
     href: '#alphaworks',
   },
-
   {
     name: 'Keplr',
     icon: '/assets/phone/icons/keplr.png',

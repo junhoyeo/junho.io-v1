@@ -16,7 +16,8 @@ type AnalyticsEvent = {
   };
 };
 
-const AMPLITUDE_API_KEY = 'bed3d63c77b5d219d3d9085336c4f698';
+// FIXME: Replace with your own API key
+const AMPLITUDE_API_KEY = 'YOUR_AMPLITUDE_API_KEY';
 const getEnvironment = () => {
   if (!isBrowser) {
     return '';
